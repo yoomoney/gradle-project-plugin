@@ -14,7 +14,7 @@ repositories {
 
     dependencies {
         classpath 'ru.yandex.money.gradle.plugins:yamoney-gradle-project-plugin:' + 
-                System.getProperty("platformLibraryProjectVersion")
+                System.getProperty("platformGradleProjectVersion")
     }
 }
 ```

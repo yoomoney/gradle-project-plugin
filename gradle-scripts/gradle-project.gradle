@@ -1,1 +1,3 @@
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'groovy'
 apply plugin: 'yamoney-gradle-project-plugin'

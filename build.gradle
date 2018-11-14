@@ -1,16 +1,13 @@
-apply from: 'gradle-scripts/build-utils.gradle'
-apply from: 'gradle-scripts/build-git-flow.gradle'
-apply from: 'gradle-scripts/build-jar.gradle'
-apply from: 'gradle-scripts/build-test.gradle'
-apply from: 'gradle-scripts/coverage.gradle'
-apply from: 'gradle-scripts/build-check-version.gradle'
-apply from: 'gradle-scripts/show-dependencies.gradle'
-apply from: 'gradle-scripts/build-publishing.gradle'
-apply from: 'gradle-scripts/build-idea-settings.gradle'
-apply from: 'gradle-scripts/manual-release.gradle'
-apply from: 'gradle-scripts/library-release.gradle'
-apply from: 'gradle-scripts/git-expired-branches.gradle'
-apply from: 'gradle-scripts/snapshot-dependencies.gradle'
+buildscript {
+    apply from: 'project.gradle', to: buildscript
+    copy {
+        from zipTree(buildscript.configurations.classpath.files.find{ it.name.contains('gradle-project-plugin')})
+        into 'tmp'
+        include 'gradle-scripts/**'
+    }
+}
+apply from: 'tmp/gradle-scripts/_root.gradle'
+/////////////////////////////////////////////
 
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'groovy'
@@ -20,31 +17,12 @@ groupIdSuffix = "gradle.plugins"
 //noinspection GroovyUnusedAssignment
 artifactID = "yamoney-gradle-project-plugin"
 
-repositories {
-    maven { url 'http://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/' }
-}
-
-buildscript {
-    repositories {
-        maven { url 'http://nexus.yamoney.ru/content/repositories/central/' }
-        maven { url 'http://nexus.yamoney.ru/content/repositories/releases/' }
-        maven { url 'http://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/' }
-
-        dependencies {
-            classpath 'org.ajoberstar:gradle-git:1.5.0'
-            classpath 'ru.yandex.money.common:yamoney-doc-publishing:1.0.1'
-            classpath 'net.researchgate:gradle-release:2.4.0'
-        }
-    }
-}
-
 jar {
     from(projectDir.absolutePath) {
         include "gradle-scripts/**/*"
         into "/"
     }
 }
-
 
 dependencies {
     compile localGroovy(),
