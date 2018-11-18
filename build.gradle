@@ -1,16 +1,25 @@
 buildscript {
     apply from: 'project.gradle', to: buildscript
     copy {
-        from zipTree(buildscript.configurations.classpath.files.find{ it.name.contains('gradle-project-plugin')})
+        from zipTree(buildscript.configurations.classpath.files.find { it.name.contains('gradle-project-plugin') })
         into 'tmp'
         include 'gradle-scripts/**'
     }
 }
 apply from: 'tmp/gradle-scripts/_root.gradle'
 /////////////////////////////////////////////
+groupIdSuffix = "gradle.plugins"
+//noinspection GroovyUnusedAssignment
+artifactID = "yamoney-gradle-project-plugin"
 
-pluginId = 'yamoney-gradle-project-plugin'
-pluginImplementationClass = 'ru.yandex.money.gradle.plugins.gradleproject.GradleProjectPlugin'
+publishing {
+    publications {
+        pluginMaven(MavenPublication) {
+            groupId 'ru.yandex.money.gradle.plugins'
+            artifactId artifactID
+        }
+    }
+}
 
 jar {
     from(projectDir.absolutePath) {
