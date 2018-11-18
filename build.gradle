@@ -8,15 +8,13 @@ buildscript {
 }
 apply from: 'tmp/gradle-scripts/_root.gradle'
 /////////////////////////////////////////////
-groupIdSuffix = "gradle.plugins"
-//noinspection GroovyUnusedAssignment
-artifactID = "yamoney-gradle-project-plugin"
 
-publishing {
-    publications {
-        pluginMaven(MavenPublication) {
-            groupId 'ru.yandex.money.gradle.plugins'
-            artifactId artifactID
+pluginId = 'yamoney-gradle-project-plugin'
+gradlePlugin {
+    plugins {
+        gradleProjectPlugin {
+            id = project.ext.pluginId
+            implementationClass = "ru.yandex.money.gradle.plugins.gradleproject.GradleProjectPlugin"
         }
     }
 }

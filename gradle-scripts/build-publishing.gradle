@@ -27,10 +27,6 @@ ext {
 
 group = 'ru.yandex.money.gradle.plugins'
 
-gradlePlugin {
-    testSourceSets sourceSets.slowTest
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
