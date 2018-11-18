@@ -20,19 +20,26 @@ jar {
         into "/"
     }
 }
+group = 'ru.yandex.money.gradle.plugins'
+gradlePlugin {
+    plugins {
+        gradleProjectPlugin {
+            id = artifactID
+            implementationClass = "ru.yandex.money.gradle.plugins.gradleproject.GradleProjectPlugin"
+        }
+    }
+}
 
 dependencies {
     compile localGroovy(),
             'org.ajoberstar:gradle-git:1.5.0',
-            'ru.yandex.money.common:yamoney-doc-publishing:1.0.1',
             'net.researchgate:gradle-release:2.4.0',
-            'ru.yandex.money.gradle.plugins:yamoney-check-changelog-plugin:1.0.0',
-            'ru.yandex.money.gradle.plugins:yamoney-publish-readme-plugin:1.0.0'
+            'ru.yandex.money.gradle.plugins:yamoney-check-changelog-plugin:1.0.2'
 
     testCompile gradleTestKit(),
-            'com.netflix.nebula:nebula-test:4.0.0'
+            'com.netflix.nebula:nebula-test:7.1.0'
 
-    testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+    testCompile('org.spockframework:spock-core:1.1-groovy-2.4') {
         exclude module: 'groovy-all'
     }
 }
