@@ -1,5 +1,6 @@
 apply plugin: 'maven-publish'
 apply plugin: 'java'
+apply plugin: 'java-gradle-plugin'
 
 javadoc {
     classpath += project.configurations.optional
@@ -20,25 +21,30 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+ext {
+    pluginId = project.name
+    pluginImplementationClass = ''
+}
+
+group = 'ru.yandex.money.gradle.plugins'
+
+gradlePlugin {
+    testSourceSets sourceSets.slowTest
+    plugins {
+        mainPlugin {
+            id = "$project.ext.pluginId"
+            implementationClass = "$project.ext.pluginImplementationClass"
+        }
+    }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId "ru.yandex.money" + (groupIdSuffix == "" ? "" : ".${groupIdSuffix}")
-            artifactId "${artifactID}"
+            groupId group
+            artifactId project.ext.pluginId
 
             from components.java
-
-            pom.withXml {
-
-                // https://discuss.gradle.org/t/maven-publish-plugin-generated-pom-making-dependency-scope-runtime/7496
-                asNode().dependencies.'*'.findAll() {
-                    it.scope.text() == 'runtime' && project.configurations.compile.allDependencies.find { dep ->
-                        dep.name == it.artifactId.text()
-                    }
-                }.each() {
-                    it.scope*.value = 'compile'
-                }
-            }
 
             artifact sourceJar {
                 classifier "sources"
@@ -81,11 +87,7 @@ task storeVersion {
     }
 
     doLast {
-        String debVersionDir = buildDir
-        String debVersionFilename = "version.txt"
-        String debVersion = "$artifactID:$version"
-
-        storeVersionToFile(debVersionDir, debVersionFilename, debVersion)
+        storeVersionToFile(buildDir as String, "version.txt", "$project.ext.pluginId:$version")
     }
 }
 tasks.publish.finalizedBy storeVersion

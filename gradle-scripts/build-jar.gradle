@@ -3,8 +3,6 @@ import java.text.SimpleDateFormat
 apply plugin: 'java'
 
 buildDir = 'target'
-archivesBaseName = archivesBaseName.replace('\\bmoney-', '')
-archivesBaseName = (archivesBaseName.startsWith('yamoney-')) ? archivesBaseName : 'yamoney-' + archivesBaseName
 
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
@@ -13,10 +11,6 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 ext {
-    schemaHome = 'schema'
-    artifactID = "${project.name}"
-    groupIdSuffix = ""
-
     centralRepoProxyUrl = 'https://nexus.yamoney.ru/content/repositories/central/'
     snapshotRepoProxyUrl = 'https://nexus.yamoney.ru/content/repositories/snapshots/'
     releaseRepoProxyUrl = 'https://nexus.yamoney.ru/content/repositories/releases/'
