@@ -22,27 +22,20 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 ext {
-    pluginId = project.name
-    pluginImplementationClass = ''
+    pluginId = ''
 }
 
 group = 'ru.yandex.money.gradle.plugins'
 
 gradlePlugin {
     testSourceSets sourceSets.slowTest
-    plugins {
-        mainPlugin {
-            id = "$project.ext.pluginId"
-            implementationClass = "$project.ext.pluginImplementationClass"
-        }
-    }
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId group
-            artifactId project.ext.pluginId
+            artifactId "$project.ext.pluginId"
 
             from components.java
 

@@ -25,10 +25,30 @@ abstract class AbstractPluginSpec extends IntegrationSpec {
         pluginClass.createNewFile()
 
         buildFile << """
-apply from: 'tmp/gradle-scripts/_root.gradle'
+buildscript {
+System.setProperty("kotlinVersion", "1.2.70")
 
+repositories {
+    maven { url 'https://nexus.yamoney.ru/content/repositories/thirdparty/' }
+    maven { url 'https://nexus.yamoney.ru/content/repositories/central/' }
+    maven { url 'https://nexus.yamoney.ru/content/repositories/releases/' }
+    maven { url 'https://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/' }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:\${System.getProperty('kotlinVersion')}"
+    }
+}
+}
+apply from: 'tmp/gradle-scripts/_root.gradle'
 pluginId = 'yamoney-hello-world-plugin'
-pluginImplementationClass = 'ru.yandex.money.gradle.plugins.helloworld.HelloWorldPlugin'
+gradlePlugin {
+    plugins {
+        helloWorldPlugin {
+            id = "\$pluginId"
+            implementationClass = "ru.yandex.money.gradle.plugins.helloworld.HelloWorldPlugin"
+        }
+    }
+}
 
 checkstyleEnabled = false
 

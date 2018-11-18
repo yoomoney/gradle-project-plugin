@@ -5,6 +5,7 @@
 Для подключения в проект этого плагина, нужно добавить файл ```project.gradle```:
 ```groovy
 System.setProperty("platformGradleProjectVersion", "2.+")
+System.setProperty("kotlinVersion", "1.2.70")
 
 repositories {
     maven { url 'https://nexus.yamoney.ru/content/repositories/thirdparty/' }
@@ -15,6 +16,8 @@ repositories {
     dependencies {
         classpath 'ru.yandex.money.gradle.plugins:yamoney-gradle-project-plugin:' + 
                 System.getProperty("platformGradleProjectVersion")
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:' + 
+                System.getProperty('kotlinVersion')
     }
 }
 ```
@@ -31,8 +34,15 @@ buildscript {
 apply from: 'tmp/gradle-scripts/_root.gradle'
 /////////////////////////////////////////////
 
-pluginId = 'yamoney-readme-plugin'
-pluginImplementationClass = 'ru.yandex.money.gradle.plugins.readme.ReadmePlugin'
+pluginId = 'yamoney-hello-world-plugin'
+gradlePlugin {
+    plugins {
+        helloWorldPlugin {
+            id = "$pluginId"
+            implementationClass = "ru.yandex.money.gradle.plugins.helloworld.HelloWorldPlugin"
+        }
+    }
+}
 
 dependencies {
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.0'

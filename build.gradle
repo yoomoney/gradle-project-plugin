@@ -9,24 +9,13 @@ buildscript {
 apply from: 'tmp/gradle-scripts/_root.gradle'
 /////////////////////////////////////////////
 
-//noinspection GroovyUnusedAssignment
-groupIdSuffix = "gradle.plugins"
-//noinspection GroovyUnusedAssignment
-artifactID = "yamoney-gradle-project-plugin"
+pluginId = 'yamoney-gradle-project-plugin'
+pluginImplementationClass = 'ru.yandex.money.gradle.plugins.gradleproject.GradleProjectPlugin'
 
 jar {
     from(projectDir.absolutePath) {
         include "gradle-scripts/**/*"
         into "/"
-    }
-}
-group = 'ru.yandex.money.gradle.plugins'
-gradlePlugin {
-    plugins {
-        gradleProjectPlugin {
-            id = artifactID
-            implementationClass = "ru.yandex.money.gradle.plugins.gradleproject.GradleProjectPlugin"
-        }
     }
 }
 
@@ -43,5 +32,3 @@ dependencies {
         exclude module: 'groovy-all'
     }
 }
-
-excludedVersionConflictLibraries = { ['com.google.guava:guava', 'org.ow2.asm:asm'] }
