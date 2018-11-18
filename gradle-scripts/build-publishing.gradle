@@ -21,6 +21,10 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+gradlePlugin {
+    automatedPublishing = false
+}
+
 ext {
     pluginId = ''
 }
@@ -29,7 +33,7 @@ group = 'ru.yandex.money.gradle.plugins'
 
 publishing {
     publications {
-        pluginMaven(MavenPublication) {
+        mavenJava(MavenPublication) {
             groupId group
             artifactId "$project.ext.pluginId"
 
