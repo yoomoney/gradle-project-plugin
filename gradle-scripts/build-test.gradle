@@ -63,3 +63,8 @@ tasks.withType(Test) {
 check.dependsOn.remove(slowTest)
 check.dependsOn.remove(slowTestTestNg)
 check.dependsOn(compileSlowTestJava)
+
+apply plugin: 'java-gradle-plugin'
+gradlePlugin {
+    testSourceSets sourceSets.test
+}
