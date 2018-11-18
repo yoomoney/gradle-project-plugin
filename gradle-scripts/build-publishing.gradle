@@ -29,7 +29,7 @@ group = 'ru.yandex.money.gradle.plugins'
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        pluginMaven(MavenPublication) {
             groupId group
             artifactId "$project.ext.pluginId"
 
