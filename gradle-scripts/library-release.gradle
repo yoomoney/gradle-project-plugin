@@ -182,16 +182,11 @@ task invokePublishInsideReleaseTask() {
     }
 }
 
-def publishInsideReleaseDependsOn = tasks.findByPath("slowTest") ? [clean, build, slowTest, publish] : [clean, build, publish]
+def publishInsideReleaseDependsOn = [clean, build, publish]
 
 task publishInsideRelease(dependsOn: publishInsideReleaseDependsOn) {
     tasks.build.mustRunAfter(tasks.clean)
-    if (tasks.findByPath("slowTest")) {
-        tasks.slowTest.mustRunAfter(tasks.build)
-        tasks.publish.mustRunAfter(tasks.slowTest)
-    } else {
-        tasks.publish.mustRunAfter(tasks.build)
-    }
+    tasks.publish.mustRunAfter(tasks.build)
 }
 
 tasks.release.dependsOn tasks.checkReleaseState

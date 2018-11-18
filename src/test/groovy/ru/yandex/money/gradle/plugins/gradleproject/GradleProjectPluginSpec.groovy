@@ -7,8 +7,7 @@ class GradleProjectPluginSpec extends AbstractPluginSpec {
 
     def "should publish gradle plugin"() {
         when:
-        def result = runTasksSuccessfully("clean", "build", "pTML")
-        System.err.println(result.standardOutput)
+        def result = runTasksSuccessfully("clean", "build", "slowTest", "pTML")
         then:
         result.success
 

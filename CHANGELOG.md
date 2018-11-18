@@ -2,10 +2,6 @@
 
 ## NEXT_VERSION
 
-## [2.0.4]() (17-11-2018)
-
-* Правка plugin-under-test №2
-
 ## [2.0.3]() (17-11-2018)
 
 * Правка plugin-under-test

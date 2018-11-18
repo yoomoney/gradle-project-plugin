@@ -92,5 +92,5 @@ task checkCoverage {
     }
 }
 jacocoAggReport.dependsOn(check)
-jacocoAggReport.dependsOn(slowTest)
+jacocoAggReport.dependsOn(test)
 checkCoverage.dependsOn(jacocoAggReport)
