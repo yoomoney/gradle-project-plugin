@@ -7,7 +7,7 @@ apply plugin: 'kotlin'
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:${System.getProperty('kotlinVersion')}",
             "org.jetbrains.kotlin:kotlin-reflect:${System.getProperty('kotlinVersion')}",
-            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${System.getProperty('kotlinVersion')}" +
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${System.getProperty('kotlinVersion')}"
 }
 
 compileKotlin {
