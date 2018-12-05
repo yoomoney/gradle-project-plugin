@@ -3,6 +3,7 @@ package ru.yandex.money.gradle.plugins.gradleproject;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import ru.yandex.money.gradle.plugins.library.changelog.CheckChangelogPlugin;
+import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,11 +20,13 @@ public class GradleProjectPlugin implements Plugin<Project> {
      * Все остальные настройки должны делаться в самом добавляемом плагине.
      */
     private static final Collection<Class<?>> PLUGINS_TO_APPLY = Arrays.asList(
-            CheckChangelogPlugin.class
+            CheckChangelogPlugin.class,
+            GitExpiredBranchPlugin.class
     );
 
     @Override
     public void apply(Project project) {
         PLUGINS_TO_APPLY.forEach(pluginClass -> project.getPluginManager().apply(pluginClass));
+        ExtensionConfigurator.configure(project);
     }
 }
