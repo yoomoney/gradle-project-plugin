@@ -2,6 +2,10 @@
 
 ## NEXT_VERSION
 
+## [2.0.11]() (06-12-2018)
+
+Починила скрипт build-check-version.gradle
+
 ## [2.0.10]() (05-12-2018)
 
 Добавил `GitExpiredBranchPlugin`
