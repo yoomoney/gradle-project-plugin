@@ -2,6 +2,10 @@
 
 ## NEXT_VERSION
 
+## [2.0.10]() (05-12-2018)
+
+Добавил `GitExpiredBranchPlugin`
+
 ## [2.0.9]() (23-11-2018)
 
 Добавил kotlin-stdlib-jdk8 в зависимости

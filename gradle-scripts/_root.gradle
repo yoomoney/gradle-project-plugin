@@ -18,7 +18,6 @@ apply from: 'tmp/gradle-scripts/library-release.gradle'
 apply from: 'tmp/gradle-scripts/checkstyle.gradle'
 apply from: 'tmp/gradle-scripts/findbugs.gradle'
 apply from: 'tmp/gradle-scripts/compile-check.gradle'
-apply from: 'tmp/gradle-scripts/git-expired-branches.gradle'
 apply from: 'tmp/gradle-scripts/snapshot-dependencies.gradle'
 apply from: 'tmp/gradle-scripts/kotlin-static-analysis.gradle'
 
