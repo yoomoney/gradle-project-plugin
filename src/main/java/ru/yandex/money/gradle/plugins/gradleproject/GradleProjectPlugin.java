@@ -1,8 +1,10 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
+import io.spring.gradle.dependencymanagement.DependencyManagementPlugin;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import ru.yandex.money.gradle.plugins.library.changelog.CheckChangelogPlugin;
+import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 
 import java.util.Arrays;
@@ -21,7 +23,9 @@ public class GradleProjectPlugin implements Plugin<Project> {
      */
     private static final Collection<Class<?>> PLUGINS_TO_APPLY = Arrays.asList(
             CheckChangelogPlugin.class,
-            GitExpiredBranchPlugin.class
+            GitExpiredBranchPlugin.class,
+            DependencyManagementPlugin.class,
+            CheckDependenciesPlugin.class
     );
 
     @Override

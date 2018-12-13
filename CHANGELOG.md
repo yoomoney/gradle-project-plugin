@@ -2,6 +2,10 @@
 
 ## NEXT_VERSION
 
+## [2.0.12]() (13-12-2018)
+
+Добавила `CheckDependenciesPlugin`
+
 ## [2.0.11]() (06-12-2018)
 
 Починила скрипт build-check-version.gradle
