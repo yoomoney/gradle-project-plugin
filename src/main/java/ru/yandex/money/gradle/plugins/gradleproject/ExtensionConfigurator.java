@@ -53,8 +53,5 @@ public class ExtensionConfigurator {
 
         checkDependenciesPluginExtension.excludedConfigurations = Arrays.asList(
                 "checkstyle", "errorprone", "optional", "findbugs");
-
-        checkDependenciesPluginExtension.exclusionsRulesSources =
-                singletonList("ru.yandex.money.platform:yamoney-libraries-dependencies");
     }
 }
