@@ -2,6 +2,15 @@
 
 ## NEXT_VERSION
 
+## [3.0.0]() (11-01-2018)
+
+Добалвен `IdeaExtPlugin` устанавливающий галочку `Delegate IDE build/run actions to gradle` в 
+`Build, Execution, Deployment -> Build Tools -> Gradle -> Runner`
+
+Это нужно для корректного запуска тестов написанных на kotlin использующих GradleRunner из idea
+
+`breaking changes` в `project.gradle` надо добавить `maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }` 
+
 ## [2.0.12]() (13-12-2018)
 
 Добавила `CheckDependenciesPlugin`

@@ -3,6 +3,7 @@ package ru.yandex.money.gradle.plugins.gradleproject;
 import io.spring.gradle.dependencymanagement.DependencyManagementPlugin;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.jetbrains.gradle.ext.IdeaExtPlugin;
 import ru.yandex.money.gradle.plugins.library.changelog.CheckChangelogPlugin;
 import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
@@ -25,7 +26,8 @@ public class GradleProjectPlugin implements Plugin<Project> {
             CheckChangelogPlugin.class,
             GitExpiredBranchPlugin.class,
             DependencyManagementPlugin.class,
-            CheckDependenciesPlugin.class
+            CheckDependenciesPlugin.class,
+            IdeaExtPlugin.class
     );
 
     @Override
