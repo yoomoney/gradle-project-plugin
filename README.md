@@ -4,7 +4,7 @@
 ## Подключение
 Для подключения в проект этого плагина, нужно добавить файл ```project.gradle```:
 ```groovy
-System.setProperty("platformGradleProjectVersion", "2.+")
+System.setProperty("platformGradleProjectVersion", "3.+")
 System.setProperty("kotlinVersion", "1.2.70")
 
 repositories {
@@ -12,6 +12,7 @@ repositories {
     maven { url 'https://nexus.yamoney.ru/content/repositories/central/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/releases/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/' }
+    maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
 
     dependencies {
         classpath 'ru.yandex.money.gradle.plugins:yamoney-gradle-project-plugin:' + 
@@ -54,7 +55,7 @@ dependencies {
 
 ## Конфигурация
 Задачи плагина можно настраивать.
-Для этого, в `build.gradle` нужно указать имя задачи и параметры, которые вы хотите поменять. Для каждого плагина нужно указывать свою, отдельную конфигурацию в build.gradle
+Для этого, в `build.gradle` нужно указать имя задачи и параметры, которые вы хотите поменять. Для каждого плагина нужно указывать свою, отдельную конфигурацию в `build.gradle`
 
 Возможные конфигурации со значениями по умолчанию приведены в секции описания плагинов.
 
@@ -164,3 +165,8 @@ checkDependencies {
 Все перечисленные конфигурации будут исключены из проверки.
 
 Подробнее о настройки IO Spring Dependency Management plugin описано на [официальной странице проекта](https://github.com/spring-gradle-plugins/dependency-management-plugin)
+
+### Настройка "Delegate IDE build/run actions to gradle"
+При импорте проекта устанавливается настройка Intellij Idea `Delegate IDE build/run actions to gradle` в `Build, Execution, Deployment | Build Tools | Gradle | Runner`
+
+Что бы отключить данное поведение добавьте в начало  `project.gradle` `System.setProperty("delegateActionsToGradle", "false")`

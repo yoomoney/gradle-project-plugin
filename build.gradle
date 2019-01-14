@@ -8,6 +8,9 @@ buildscript {
 }
 apply from: 'tmp/gradle-scripts/_root.gradle'
 /////////////////////////////////////////////
+repositories {
+    maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
+}
 
 pluginId = 'yamoney-gradle-project-plugin'
 gradlePlugin {
@@ -32,7 +35,8 @@ dependencies {
             'net.researchgate:gradle-release:2.4.0',
             'ru.yandex.money.gradle.plugins:yamoney-check-dependencies-plugin:3.0.0',
             'ru.yandex.money.gradle.plugins:yamoney-check-changelog-plugin:1.0.2',
-            'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:2.0.4'
+            'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:2.0.4',
+            'gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:0.5'
 
     testCompile gradleTestKit(),
             'com.netflix.nebula:nebula-test:7.1.0'

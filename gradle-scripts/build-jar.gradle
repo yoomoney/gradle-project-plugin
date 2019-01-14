@@ -17,7 +17,6 @@ ext {
     thirdPartyLocalRepoUrl = 'https://nexus.yamoney.ru/content/repositories/thirdparty/'
     sppSnapshotRepoProxyUrl = 'https://nexus.yamoney.ru/content/repositories/spp-snapshots/'
     sppReleasesRepoProxyUrl = 'https://nexus.yamoney.ru/content/repositories/spp-releases/'
-   
 }
 
 
@@ -49,6 +48,11 @@ repositories {
     maven {
         url centralRepoProxyUrl
     }
+
+    maven {
+        url 'https://nexus.yamoney.ru/repository/gradle-plugins/'
+    }
+
 }
 
 configurations {
