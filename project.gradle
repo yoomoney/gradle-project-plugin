@@ -1,10 +1,11 @@
-System.setProperty("platformGradleProjectVersion", "2.+")
+System.setProperty("platformGradleProjectVersion", "3.+")
 
 repositories {
     maven { url 'https://nexus.yamoney.ru/content/repositories/thirdparty/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/central/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/releases/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/' }
+    maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
 
     dependencies {
         classpath 'ru.yandex.money.gradle.plugins:yamoney-gradle-project-plugin:' +
