@@ -2,7 +2,11 @@
 
 ## NEXT_VERSION
 
-## [3.0.0]() (11-01-2018)
+## [3.0.1]() (17-01-2019)
+
+Изменена версия check-dependencies-plugin на 4.0.3
+
+## [3.0.0]() (11-01-2019)
 
 Добалвен `IdeaExtPlugin` устанавливающий галочку `Delegate IDE build/run actions to gradle` в 
 `Build, Execution, Deployment -> Build Tools -> Gradle -> Runner`
