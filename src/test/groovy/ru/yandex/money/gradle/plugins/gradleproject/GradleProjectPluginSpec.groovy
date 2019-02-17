@@ -17,7 +17,8 @@ class GradleProjectPluginSpec extends AbstractPluginSpec {
     }
 
     def "should contains tasks"() {
-        def expectedTasks = [CheckDependenciesPlugin.CHECK_DEPENDENCIES_TASK_NAME]
+        def expectedTasks = [CheckDependenciesPlugin.CHECK_DEPENDENCIES_TASK_NAME,
+                             "preRelease", "release", "checkChangelog"]
 
         when:
         def result = runTasksSuccessfully("tasks")

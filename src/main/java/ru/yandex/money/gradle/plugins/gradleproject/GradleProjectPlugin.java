@@ -7,6 +7,7 @@ import org.jetbrains.gradle.ext.IdeaExtPlugin;
 import ru.yandex.money.gradle.plugins.library.changelog.CheckChangelogPlugin;
 import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
+import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -23,7 +24,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
      * Все остальные настройки должны делаться в самом добавляемом плагине.
      */
     private static final Collection<Class<?>> PLUGINS_TO_APPLY = Arrays.asList(
-            CheckChangelogPlugin.class,
+            ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
             DependencyManagementPlugin.class,
             CheckDependenciesPlugin.class,
