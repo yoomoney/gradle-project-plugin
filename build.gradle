@@ -33,7 +33,6 @@ dependencies {
     compile localGroovy(),
             'org.ajoberstar:gradle-git:1.5.0',
             'ru.yandex.money.gradle.plugins:yamoney-check-dependencies-plugin:4.0.3',
-            'ru.yandex.money.gradle.plugins:yamoney-check-changelog-plugin:1.0.2',
             'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:2.0.4',
             'gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:0.5',
             'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.0.0'
