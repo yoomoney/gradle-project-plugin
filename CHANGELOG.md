@@ -2,6 +2,12 @@
 
 ## NEXT_VERSION
 
+## [4.0.0]() (18-02-2019)
+
+Переход на yamoney-artifact-release-plugin
+Поменялся релизный цикл, теперь вместо release, в мастере надо вызвать preRelease и release
+Поменялся формат CHANGELOG.md подробности в https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/artifact-release-plugin/browse/README.md  
+ 
 ## [3.0.1]() (17-01-2019)
 
 Изменена версия check-dependencies-plugin на 4.0.3
