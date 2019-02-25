@@ -35,7 +35,7 @@ dependencies {
             'ru.yandex.money.gradle.plugins:yamoney-check-dependencies-plugin:4.0.3',
             'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:2.0.4',
             'gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:0.5',
-            'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.0.0'
+            'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.1.1'
 
     testCompile gradleTestKit(),
             'com.netflix.nebula:nebula-test:7.1.0'

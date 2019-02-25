@@ -2,6 +2,9 @@
 
 ## NEXT_VERSION
 
+## [4.0.1]() (18-02-2019)
+Обновлен yamoney-artifact-release-plugin
+
 ## [4.0.0]() (18-02-2019)
 
 Переход на yamoney-artifact-release-plugin
