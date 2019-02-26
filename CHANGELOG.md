@@ -1,7 +1,7 @@
-%% NEXT_VERSION_TYPE=MINOR
-%% NEXT_VERSION_DESCRIPTION_BEGIN
+## [4.1.0]() (26-02-2019)
+
 * Переход на platformGradleProjectVersion 4 версии
-%% NEXT_VERSION_DESCRIPTION_END
+
 ## [4.0.1]() (18-02-2019)
 Обновлен yamoney-artifact-release-plugin
 
