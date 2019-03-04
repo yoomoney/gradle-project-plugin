@@ -1,5 +1,7 @@
-%% NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+%% NEXT_VERSION_TYPE=PATCH
 %% NEXT_VERSION_DESCRIPTION_BEGIN
+* Поменялся формат маркеров в changelog, сборка в фича ветках может упасть
+  поправьте %% на ### в changelog.md 
 %% NEXT_VERSION_DESCRIPTION_END
 ## [4.1.0]() (26-02-2019)
 
