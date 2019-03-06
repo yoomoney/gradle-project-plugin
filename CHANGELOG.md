@@ -1,6 +1,7 @@
-%% NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
-%% NEXT_VERSION_DESCRIPTION_BEGIN
-%% NEXT_VERSION_DESCRIPTION_END
+### NEXT_VERSION_TYPE=MINOR
+### NEXT_VERSION_DESCRIPTION_BEGIN
+* Подняла версию `yamoney-check-dependencies-plugin` до `4.4.2`
+### NEXT_VERSION_DESCRIPTION_END
 ## [4.1.1]() (04-03-2019)
 
 * Поменялся формат маркеров в changelog, сборка в фича ветках может упасть
