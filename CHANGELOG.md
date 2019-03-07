@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [4.2.0]() (07-03-2019)
+
 * Подняла версию `yamoney-check-dependencies-plugin` до `4.4.2`
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [4.1.1]() (04-03-2019)
 
 * Поменялся формат маркеров в changelog, сборка в фича ветках может упасть
