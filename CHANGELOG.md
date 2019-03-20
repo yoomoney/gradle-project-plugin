@@ -2,6 +2,10 @@
 ### NEXT_VERSION_DESCRIPTION_BEGIN
 * Исправлена авторизация в гите по ssh
 ### NEXT_VERSION_DESCRIPTION_END
+## [4.2.1]() (20-03-2019)
+
+* Исправлена авторизация в гите по ssh
+
 ## [4.2.0]() (07-03-2019)
 
 * Подняла версию `yamoney-check-dependencies-plugin` до `4.4.2`
