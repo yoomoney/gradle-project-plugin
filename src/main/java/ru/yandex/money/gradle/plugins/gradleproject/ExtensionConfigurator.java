@@ -69,14 +69,6 @@ public class ExtensionConfigurator {
                 "distributions", "bindings-common", "schema", "checkstyleReports", "../build")
                 .forEach(folderName -> excludeDirs.add(new File(project.getBuildDir().getPath() + "/" + folderName)));
         ideaModel.getModule().setExcludeDirs(excludeDirs);
-
-        if (!"false".equalsIgnoreCase(System.getProperty("delegateActionsToGradle"))) {
-            ExtensionAware ideaProject = (ExtensionAware) ideaModel.getProject();
-            if (ideaProject != null) {
-                ExtensionAware ideaProjectSettings = (ExtensionAware) ideaProject.getExtensions().getByType(ProjectSettings.class);
-                ideaProjectSettings.getExtensions().getByType(ActionDelegationConfig.class).setDelegateBuildRunToGradle(true);
-            }
-        }
     }
 
     private static void configureGitExpiredBranchesExtension(Project project) {

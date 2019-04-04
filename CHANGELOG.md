@@ -1,5 +1,8 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Убрана галочка `Delegate IDE build/run actions to gradle` в 
+`Build, Execution, Deployment -> Build Tools -> Gradle -> Runner`
+т.к. она устанавливается один раз в idea для всех проектов
 ### NEXT_VERSION_DESCRIPTION_END
 ## [4.2.2]() (20-03-2019)
 

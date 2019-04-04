@@ -169,8 +169,3 @@ checkDependencies {
 Все перечисленные конфигурации будут исключены из проверки.
 
 Подробнее о настройки IO Spring Dependency Management plugin описано на [официальной странице проекта](https://github.com/spring-gradle-plugins/dependency-management-plugin)
-
-### Настройка "Delegate IDE build/run actions to gradle"
-При импорте проекта устанавливается настройка Intellij Idea `Delegate IDE build/run actions to gradle` в `Build, Execution, Deployment | Build Tools | Gradle | Runner`
-
-Что бы отключить данное поведение добавьте в начало  `project.gradle` `System.setProperty("delegateActionsToGradle", "false")`
