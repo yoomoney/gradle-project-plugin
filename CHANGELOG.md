@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Подняла версию `yamoney-git-expired-branch-plugin` c '2.0.4' до `3.0.0`.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [4.2.3]() (04-04-2019)
 

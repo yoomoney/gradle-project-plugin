@@ -10,6 +10,7 @@ import ru.yandex.money.gradle.plugins.gradleproject.git.GitManager;
 import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPluginExtension;
 import ru.yandex.money.gradle.plugins.library.dependencies.checkversion.MajorVersionCheckerExtension;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.EmailConnectionExtension;
+import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.GitConnectionExtension;
 import ru.yandex.money.gradle.plugins.release.ReleaseExtension;
 
 import java.io.File;
@@ -77,6 +78,12 @@ public class ExtensionConfigurator {
         emailConnection.emailPort = 25;
         emailConnection.emailAuthUser = System.getenv("MAIL_USER");
         emailConnection.emailAuthPassword = System.getenv("MAIL_PASSWORD");
+
+
+        GitConnectionExtension gitConnectionExtension =
+                project.getExtensions().findByType(GitConnectionExtension.class);
+
+        gitConnectionExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
     }
 
     private static void configureMajorVersionCheckerExtension(Project project) {
