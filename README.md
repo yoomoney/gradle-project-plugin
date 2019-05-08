@@ -7,7 +7,7 @@
 ## Подключение
 Для подключения в проект этого плагина, нужно добавить файл ```project.gradle```:
 ```groovy
-System.setProperty("platformGradleProjectVersion", "3.+")
+System.setProperty("platformGradleProjectVersion", "5.+")
 repositories {
     maven { url 'https://nexus.yamoney.ru/content/repositories/thirdparty/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/central/' }

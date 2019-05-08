@@ -1,7 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
-* Все gradle скрипты заменены на плагины и удалены
-* Изменён способ подключения плагина, подробности в README
+* Сборка переведена на yamoney-gradle-project-plugin=5.0.0
 ### NEXT_VERSION_DESCRIPTION_END
 ## [4.3.0]() (26-04-2019)
 
