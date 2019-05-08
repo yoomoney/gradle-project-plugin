@@ -2,14 +2,12 @@ package ru.yandex.money.gradle.plugins.gradleproject;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
-import org.gradle.api.plugins.GroovyPlugin;
 import org.gradle.api.publish.maven.plugins.MavenPublishPlugin;
 import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin;
 import org.gradle.util.VersionNumber;
 import org.jetbrains.gradle.ext.IdeaExtPlugin;
 import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
 import ru.yandex.money.gradle.plugins.gradleproject.publishing.PublishingConfigurer;
-import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
 
@@ -30,9 +28,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
             IdeaExtPlugin.class,
-            JavaGradlePluginPlugin.class,
-            CheckDependenciesPlugin.class,
-            GroovyPlugin.class
+            JavaGradlePluginPlugin.class
     );
 
     @Override
