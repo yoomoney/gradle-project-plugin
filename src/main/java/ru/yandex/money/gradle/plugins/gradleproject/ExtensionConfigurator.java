@@ -1,11 +1,7 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
 import org.gradle.api.Project;
-import org.gradle.api.plugins.ExtensionAware;
-import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.plugins.ide.idea.model.IdeaModel;
-import org.jetbrains.gradle.ext.ActionDelegationConfig;
-import org.jetbrains.gradle.ext.ProjectSettings;
 import ru.yandex.money.gradle.plugins.gradleproject.git.GitManager;
 import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPluginExtension;
 import ru.yandex.money.gradle.plugins.library.dependencies.checkversion.MajorVersionCheckerExtension;
@@ -16,7 +12,6 @@ import ru.yandex.money.gradle.plugins.release.ReleaseExtension;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -55,7 +50,6 @@ public class ExtensionConfigurator {
             }
         }
     }
-
 
     private static void configureIdeaExtPlugin(Project project) {
         IdeaModel ideaModel = project.getExtensions().getByType(IdeaModel.class);

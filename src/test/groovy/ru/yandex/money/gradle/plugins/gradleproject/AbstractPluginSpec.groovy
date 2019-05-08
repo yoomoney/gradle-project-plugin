@@ -2,7 +2,6 @@ package ru.yandex.money.gradle.plugins.gradleproject
 
 import nebula.test.IntegrationSpec
 import org.ajoberstar.grgit.Grgit
-import org.apache.commons.io.FileUtils
 
 import java.nio.file.Paths
 
@@ -26,20 +25,18 @@ abstract class AbstractPluginSpec extends IntegrationSpec {
 
         buildFile << """
 buildscript {
-System.setProperty("kotlinVersion", "1.2.70")
 
 repositories {
     maven { url 'https://nexus.yamoney.ru/content/repositories/thirdparty/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/central/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/releases/' }
     maven { url 'https://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/' }
+    maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
 
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:\${System.getProperty('kotlinVersion')}"
-    }
+
 }
 }
-apply from: 'tmp/gradle-scripts/_root.gradle'
+apply plugin: "yamoney-gradle-project-plugin"
 pluginId = 'yamoney-hello-world-plugin'
 gradlePlugin {
     plugins {
@@ -50,7 +47,9 @@ gradlePlugin {
     }
 }
 
-checkstyleEnabled = false
+javaModule {
+    checkstyleEnabled = false
+}
 
 dependencies {
     compile localGroovy()
@@ -73,11 +72,6 @@ public class HelloWorldPlugin implements Plugin<Project> {
 """
 
         grgit = Grgit.init(dir: projectDir)
-        FileUtils.copyDirectory(Paths.get(System.getProperty("user.dir"), "gradle-scripts").toFile(),
-                Paths.get(projectDir.absolutePath, "tmp", "gradle-scripts").toFile())
-
-
-
         grgit.add(patterns: ['**/**'])
         grgit.commit(message: 'init', all: true)
 

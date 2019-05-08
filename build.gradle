@@ -22,25 +22,16 @@ gradlePlugin {
     }
 }
 
-jar {
-    from(projectDir.absolutePath) {
-        include "gradle-scripts/**/*"
-        into "/"
-    }
-}
-
 dependencies {
     compile localGroovy(),
-            'org.ajoberstar:gradle-git:1.5.0',
-            'ru.yandex.money.gradle.plugins:yamoney-check-dependencies-plugin:4.4.2',
             'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:3.0.0',
             'gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:0.5',
-            'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.2.2'
+            'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.2.2',
+            'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.61',
+            'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.4.1'
 
     testCompile gradleTestKit(),
+            'org.ajoberstar:gradle-git:1.5.0',
             'com.netflix.nebula:nebula-test:7.1.0'
 
-    testCompile('org.spockframework:spock-core:1.1-groovy-2.4') {
-        exclude module: 'groovy-all'
-    }
 }
