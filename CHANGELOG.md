@@ -1,5 +1,7 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MAJOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Все gradle скрипты заменены на плагины и удалены
+* Изменён способ подключения плагина, подробности в README
 ### NEXT_VERSION_DESCRIPTION_END
 ## [4.3.0]() (26-04-2019)
 

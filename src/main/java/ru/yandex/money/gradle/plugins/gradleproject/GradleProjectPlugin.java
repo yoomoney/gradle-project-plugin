@@ -1,10 +1,13 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
-import io.spring.gradle.dependencymanagement.DependencyManagementPlugin;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.publish.maven.plugins.MavenPublishPlugin;
+import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin;
+import org.gradle.util.VersionNumber;
 import org.jetbrains.gradle.ext.IdeaExtPlugin;
-import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin;
+import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
+import ru.yandex.money.gradle.plugins.gradleproject.publishing.PublishingConfigurer;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
 
@@ -18,21 +21,39 @@ import java.util.Collection;
  * @since 14.11.2018
  */
 public class GradleProjectPlugin implements Plugin<Project> {
-    /**
-     * Для подключения новой функциональности, достаточно добавить плагин в этот список.
-     * Все остальные настройки должны делаться в самом добавляемом плагине.
-     */
+
     private static final Collection<Class<?>> PLUGINS_TO_APPLY = Arrays.asList(
+            JavaModulePlugin.class,
+            MavenPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
-            DependencyManagementPlugin.class,
-            CheckDependenciesPlugin.class,
-            IdeaExtPlugin.class
+            IdeaExtPlugin.class,
+            JavaGradlePluginPlugin.class
     );
 
     @Override
     public void apply(Project project) {
+        if (VersionNumber.parse(project.getGradle().getGradleVersion()).compareTo(VersionNumber.parse("4.10.2'")) < 0) {
+            throw new IllegalStateException("Gradle >= 4.10.2 is required");
+        }
+        System.setProperty("kotlinVersion", "1.2.61");
         PLUGINS_TO_APPLY.forEach(pluginClass -> project.getPluginManager().apply(pluginClass));
+        configureRepos(project);
+        configureKotlin(project);
         ExtensionConfigurator.configure(project);
+        new PublishingConfigurer().init(project);
+        project.getTasks().create("checkComponentSnapshotDependencies").dependsOn("checkSnapshotsDependencies");
     }
+
+    private void configureRepos(Project project) {
+        project.getRepositories().maven(repo -> repo.setUrl("https://nexus.yamoney.ru/repository/gradle-plugins/"));
+    }
+
+    private static void configureKotlin(Project project) {
+        String kotlinVersion = System.getProperty("kotlinVersion");
+        project.getDependencies().add("compile", "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" + kotlinVersion);
+        project.getDependencies().add("compile", "org.jetbrains.kotlin:kotlin-reflect:" + kotlinVersion);
+    }
+
+
 }

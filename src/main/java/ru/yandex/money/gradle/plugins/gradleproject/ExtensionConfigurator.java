@@ -1,14 +1,8 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
 import org.gradle.api.Project;
-import org.gradle.api.plugins.ExtensionAware;
-import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.plugins.ide.idea.model.IdeaModel;
-import org.jetbrains.gradle.ext.ActionDelegationConfig;
-import org.jetbrains.gradle.ext.ProjectSettings;
 import ru.yandex.money.gradle.plugins.gradleproject.git.GitManager;
-import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPluginExtension;
-import ru.yandex.money.gradle.plugins.library.dependencies.checkversion.MajorVersionCheckerExtension;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.EmailConnectionExtension;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.GitConnectionExtension;
 import ru.yandex.money.gradle.plugins.release.ReleaseExtension;
@@ -16,7 +10,6 @@ import ru.yandex.money.gradle.plugins.release.ReleaseExtension;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -35,8 +28,6 @@ public class ExtensionConfigurator {
      */
     static void configure(Project project) {
         configureGitExpiredBranchesExtension(project);
-        configureMajorVersionCheckerExtension(project);
-        configureCheckDependenciesExtension(project);
         configureIdeaExtPlugin(project);
         configureReleasePlugin(project);
     }
@@ -55,7 +46,6 @@ public class ExtensionConfigurator {
             }
         }
     }
-
 
     private static void configureIdeaExtPlugin(Project project) {
         IdeaModel ideaModel = project.getExtensions().getByType(IdeaModel.class);
@@ -86,20 +76,4 @@ public class ExtensionConfigurator {
         gitConnectionExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
     }
 
-    private static void configureMajorVersionCheckerExtension(Project project) {
-        Set<String> includeGroupIdPrefixes = new HashSet<>();
-        includeGroupIdPrefixes.add("ru.yamoney");
-        includeGroupIdPrefixes.add("ru.yandex.money");
-
-        project.getExtensions().getByType(MajorVersionCheckerExtension.class)
-                .includeGroupIdPrefixes = includeGroupIdPrefixes;
-    }
-
-    private static void configureCheckDependenciesExtension(Project project) {
-        CheckDependenciesPluginExtension checkDependenciesPluginExtension =
-                project.getExtensions().getByType(CheckDependenciesPluginExtension.class);
-
-        checkDependenciesPluginExtension.excludedConfigurations = Arrays.asList(
-                "checkstyle", "errorprone", "optional", "findbugs");
-    }
 }
