@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.0.1]() (08-05-2019)
+
 * Сборка переведена на yamoney-gradle-project-plugin=5.0.0
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.0.0]() (08-05-2019)
 
 * Все gradle скрипты заменены на плагины и удалены
