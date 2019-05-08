@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=MAJOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.0.0]() (08-05-2019)
+
 * Все gradle скрипты заменены на плагины и удалены
 * Изменён способ подключения плагина, подробности в README
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [4.3.0]() (26-04-2019)
 
 * Подняла версию `yamoney-git-expired-branch-plugin` c '2.0.4' до `3.0.0`.
