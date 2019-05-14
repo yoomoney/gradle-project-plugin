@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Обновлён `java-module-plugin`, новя версия включает в себя плагин для kotlin
 ### NEXT_VERSION_DESCRIPTION_END
 ## [5.0.2]() (14-05-2019)
 
