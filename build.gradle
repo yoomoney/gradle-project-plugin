@@ -19,7 +19,7 @@ dependencies {
             'gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:0.5',
             'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.2.2',
             'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.61',
-            'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.5.0'
+            'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.7.0'
 
     testCompile gradleTestKit(),
             'org.ajoberstar:gradle-git:1.5.0',
