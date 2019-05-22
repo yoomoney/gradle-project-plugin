@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [5.1.1]() (22-05-2019)
 
 * Удалено подключение kotlin в пользу аналогичного функционала в yamoney-kotlin-module-plugin
