@@ -7,7 +7,6 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 
 import java.io.Closeable;
-import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -19,15 +18,9 @@ public class GitManager implements Closeable {
     private final Logger log = Logging.getLogger(GitManager.class);
     private final Git git;
 
-    /**
-     * Конструктор
-     *
-     * @param projectDirectory директория с git
-     */
-    public GitManager(File projectDirectory) {
+    public GitManager() {
         try {
             this.git = new Git(new FileRepositoryBuilder()
-                    .setGitDir(new File(projectDirectory, ".git"))
                     .readEnvironment()
                     .findGitDir()
                     .build());
