@@ -1,5 +1,6 @@
 package ru.yandex.money.gradle.plugins.gradleproject.publishing;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.codehaus.groovy.runtime.ResourceGroovyMethods;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
@@ -23,6 +24,7 @@ import java.nio.file.Paths;
  * @author Valerii Zhirnov (vazhirnov@yamoney.ru)
  * @since 22.04.2019
  */
+@SuppressFBWarnings("HARD_CODE_PASSWORD")
 public class PublishingConfigurer {
 
     private static final String ARTIFACT_GROUP = "ru.yandex.money.gradle.plugins";
