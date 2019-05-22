@@ -1,11 +1,11 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.1.1]() (22-05-2019)
+
 * Удалено подключение kotlin в пользу аналогичного функционала в yamoney-kotlin-module-plugin
 * Удалена конфигурация Intellij IDEA в пользу аналогичного функционала в yamoney-java-module-plugin
 * Удалено подключение idea-ext-plugin
 * Обновлена версия yamoney-java-module-plugin 1.7.0 -> 1.9.0
 * Обновлена версия yamoney-artifact-release-plugin 1.2.2 -> 1.4.2
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.1.0]() (14-05-2019)
 
 * Обновлён `java-module-plugin`, новя версия включает в себя плагин для kotlin
