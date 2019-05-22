@@ -33,7 +33,7 @@ public class ExtensionConfigurator {
         releaseExtension.setChangelogRequired(true);
         releaseExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
 
-        try (GitManager git = new GitManager()) {
+        try (GitManager git = new GitManager(project)) {
             if (!git.isCurrentBranchForRelease()) {
                 project.getTasks().getByName("build")
                         .dependsOn(project.getTasks().getByName("checkChangelog"));

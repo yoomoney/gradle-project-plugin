@@ -3,6 +3,7 @@ package ru.yandex.money.gradle.plugins.gradleproject.git;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
+import org.gradle.api.Project;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 
@@ -18,11 +19,11 @@ public class GitManager implements Closeable {
     private final Logger log = Logging.getLogger(GitManager.class);
     private final Git git;
 
-    public GitManager() {
+    public GitManager(Project project) {
         try {
             this.git = new Git(new FileRepositoryBuilder()
                     .readEnvironment()
-                    .findGitDir()
+                    .findGitDir(project.getProjectDir())
                     .build());
         } catch (IOException e) {
             throw new RuntimeException(e);
