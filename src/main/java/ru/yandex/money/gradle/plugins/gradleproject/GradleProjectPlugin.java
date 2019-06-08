@@ -9,6 +9,7 @@ import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
 import ru.yandex.money.gradle.plugins.gradleproject.publishing.PublishingConfigurer;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
+import ru.yandex.money.gradle.plugins.task.monitoring.TaskExecutionMonitoringPlugin;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -26,7 +27,8 @@ public class GradleProjectPlugin implements Plugin<Project> {
             MavenPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
-            JavaGradlePluginPlugin.class
+            JavaGradlePluginPlugin.class,
+            TaskExecutionMonitoringPlugin.class
     );
 
     @Override
