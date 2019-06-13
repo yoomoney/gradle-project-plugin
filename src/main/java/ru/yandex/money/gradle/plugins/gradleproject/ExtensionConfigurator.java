@@ -57,7 +57,6 @@ public class ExtensionConfigurator {
         gitConnectionExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
     }
 
-
     private static void configureArchitectureTestPlugin(Project project) {
         ArchitectureTestExtension architectureTestExtension = project.getExtensions().getByType(ArchitectureTestExtension.class);
         architectureTestExtension.getInclude().addAll(Arrays.asList(

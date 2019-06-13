@@ -1,6 +1,11 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Корректно подключены плагины yamoney-build-monitoring-plugin, yamoney-architecture-test-plugin
 ### NEXT_VERSION_DESCRIPTION_END
+## [5.4.0]() (13-06-2019)
+
+* Удалены подключения плагинов yamoney-architecture-test-plugin, yamoney-build-monitoring-plugin
+
 ## [5.3.0]() (13-06-2019)
 
 * Включен yamoney-build-monitoring-plugin

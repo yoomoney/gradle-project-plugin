@@ -28,7 +28,6 @@ public class GradleProjectPlugin implements Plugin<Project> {
             MavenPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
-            JavaGradlePluginPlugin.class,
             TaskExecutionMonitoringPlugin.class,
             ArchitectureTestPlugin.class
     );
@@ -38,16 +37,17 @@ public class GradleProjectPlugin implements Plugin<Project> {
         if (VersionNumber.parse(project.getGradle().getGradleVersion()).compareTo(VersionNumber.parse("4.10.2'")) < 0) {
             throw new IllegalStateException("Gradle >= 4.10.2 is required");
         }
-        PLUGINS_TO_APPLY.forEach(pluginClass -> project.getPluginManager().apply(pluginClass));
+
+        project.getPluginManager().apply(JavaGradlePluginPlugin.class);
         configureRepos(project);
-        ExtensionConfigurator.configure(project);
+
         new PublishingConfigurer().init(project);
+        PLUGINS_TO_APPLY.forEach(pluginClass -> project.getPluginManager().apply(pluginClass));
+        ExtensionConfigurator.configure(project);
         project.getTasks().create("checkComponentSnapshotDependencies").dependsOn("checkSnapshotsDependencies");
     }
 
     private void configureRepos(Project project) {
         project.getRepositories().maven(repo -> repo.setUrl("https://nexus.yamoney.ru/repository/gradle-plugins/"));
     }
-
-
 }
