@@ -25,6 +25,7 @@ public class ExtensionConfigurator {
     static void configure(Project project) {
         configureGitExpiredBranchesPlugin(project);
         configureReleasePlugin(project);
+        configureArchitectureTestPlugin(project);
     }
 
     private static void configureReleasePlugin(Project project) {
@@ -63,5 +64,4 @@ public class ExtensionConfigurator {
                 "check_unique_enums_codes",
                 "check_unique_enums_secondary_codes"));
     }
-
 }

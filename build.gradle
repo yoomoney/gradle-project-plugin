@@ -4,6 +4,7 @@ buildscript {
 apply plugin: 'yamoney-gradle-project-plugin'
 
 pluginId = 'yamoney-gradle-project-plugin'
+group='test-group'
 gradlePlugin {
     plugins {
         gradleProjectPlugin {
