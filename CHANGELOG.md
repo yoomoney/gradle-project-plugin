@@ -2,6 +2,13 @@
 ### NEXT_VERSION_DESCRIPTION_BEGIN
 * Включен yamoney-build-monitoring-plugin
 ### NEXT_VERSION_DESCRIPTION_END
+## [5.2.0]() (11-06-2019)
+
+* Обновлена версия yamoney-architecture-test-plugin
+* По умолчанию включены для выполнения следующие тесты:
+'check_unique_enums_codes'
+'check_unique_enums_secondary_codes'
+
 ## [5.1.1]() (22-05-2019)
 
 * Удалено подключение kotlin в пользу аналогичного функционала в yamoney-kotlin-module-plugin
