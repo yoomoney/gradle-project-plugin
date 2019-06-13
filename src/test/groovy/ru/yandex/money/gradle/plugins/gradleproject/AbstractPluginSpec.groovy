@@ -42,8 +42,6 @@ repositories {
 }
 apply plugin: "yamoney-gradle-project-plugin"
 
-group = 'ru.yandex.money.gradle.plugins'
-
 pluginId = 'yamoney-hello-world-plugin'
 gradlePlugin {
     plugins {

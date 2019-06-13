@@ -5,12 +5,10 @@ import org.gradle.api.Project;
 import org.gradle.api.publish.maven.plugins.MavenPublishPlugin;
 import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin;
 import org.gradle.util.VersionNumber;
-import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestPlugin;
 import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
 import ru.yandex.money.gradle.plugins.gradleproject.publishing.PublishingConfigurer;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
-import ru.yandex.money.gradle.plugins.task.monitoring.TaskExecutionMonitoringPlugin;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -28,9 +26,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
             MavenPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
-            JavaGradlePluginPlugin.class,
-            TaskExecutionMonitoringPlugin.class,
-            ArchitectureTestPlugin.class
+            JavaGradlePluginPlugin.class
     );
 
     @Override
