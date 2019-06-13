@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [5.4.0]() (13-06-2019)
 
 * Удалены подключения плагинов yamoney-architecture-test-plugin, yamoney-build-monitoring-plugin
