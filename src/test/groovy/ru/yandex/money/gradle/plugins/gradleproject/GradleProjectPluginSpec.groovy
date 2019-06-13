@@ -1,5 +1,6 @@
 package ru.yandex.money.gradle.plugins.gradleproject
 
+import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestPlugin
 import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin
 
 /**
@@ -18,6 +19,7 @@ class GradleProjectPluginSpec extends AbstractPluginSpec {
 
     def "should contains tasks"() {
         def expectedTasks = [CheckDependenciesPlugin.CHECK_DEPENDENCIES_TASK_NAME,
+                             ArchitectureTestPlugin.CHECK_VIOLATIONS_TASK_NAME,
                              "preRelease", "release", "checkChangelog"]
 
         when:

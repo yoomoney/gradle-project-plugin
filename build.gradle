@@ -4,6 +4,7 @@ buildscript {
 apply plugin: 'yamoney-gradle-project-plugin'
 
 pluginId = 'yamoney-gradle-project-plugin'
+group='test-group'
 gradlePlugin {
     plugins {
         gradleProjectPlugin {
@@ -19,6 +20,7 @@ dependencies {
             'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:1.4.2',
             'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.61',
             'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.9.0',
+            'ru.yandex.money.gradle.plugins:yamoney-build-monitoring-plugin:1.2.0',
             'ru.yandex.money.gradle.plugins:yamoney-architecture-test-plugin:1.4.0'
 
     testCompile gradleTestKit(),
