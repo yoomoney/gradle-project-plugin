@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.6.0]() (26-06-2019)
+
 * Поднята версия build-monitoring-plugin 1.2.0 -> 1.3.0
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.5.0]() (14-06-2019)
 
 * Корректно подключены плагины yamoney-build-monitoring-plugin, yamoney-architecture-test-plugin
