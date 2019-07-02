@@ -1,10 +1,10 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
-* Обновлены версии 
-    * git-expired-branch-plugin до `4.0.0`
-    * artifact-release-plugin до `2.0.0`
-  Этим плагинам добавлено проставление настроек для git - user и email.
-### NEXT_VERSION_DESCRIPTION_END
+## [5.6.2]() (02-07-2019)
+
+* Обновлены версии
+* git-expired-branch-plugin до `4.0.0`
+* artifact-release-plugin до `2.0.0`
+Этим плагинам добавлено проставление настроек для git - user и email.
+
 ## [5.6.1]() (28-06-2019)
 
 * Обновлён java-module-plugin до версии 1.12.0
