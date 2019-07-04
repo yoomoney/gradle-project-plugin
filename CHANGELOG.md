@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.6.4]() (04-07-2019)
+
 * Повышена версия java-module-plugin `1.13.1`
 * Новая версия исправляет баг в процедуре подсчета warnings (FileNotFoundException ../compile_error_out.txt)
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.6.3]() (03-07-2019)
 
 * Повышена версия java-module-plugin `1.13.0`
