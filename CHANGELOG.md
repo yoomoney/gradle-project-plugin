@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.6.6]() (12-07-2019)
+
 * Повышена версия yamoney-java-module-plugin до 1.14.1
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.6.5]() (05-07-2019)
 
 Обновлена версия yamoney-artifact-release-plugin=2.0.0 -> 2.1.0,
