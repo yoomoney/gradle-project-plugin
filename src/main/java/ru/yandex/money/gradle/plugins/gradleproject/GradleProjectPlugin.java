@@ -10,7 +10,7 @@ import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
 import ru.yandex.money.gradle.plugins.gradleproject.publishing.PublishingConfigurer;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
-import ru.yandex.money.gradle.plugins.task.monitoring.TaskExecutionMonitoringPlugin;
+import ru.yandex.money.gradle.plugins.task.monitoring.BuildMonitoringPlugin;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -28,7 +28,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
             MavenPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
-            TaskExecutionMonitoringPlugin.class,
+            BuildMonitoringPlugin.class,
             ArchitectureTestPlugin.class
     );
 
@@ -44,7 +44,6 @@ public class GradleProjectPlugin implements Plugin<Project> {
         new PublishingConfigurer().init(project);
         PLUGINS_TO_APPLY.forEach(pluginClass -> project.getPluginManager().apply(pluginClass));
         ExtensionConfigurator.configure(project);
-        project.getTasks().create("checkComponentSnapshotDependencies").dependsOn("checkSnapshotsDependencies");
     }
 
     private void configureRepos(Project project) {

@@ -1,7 +1,8 @@
 package ru.yandex.money.gradle.plugins.gradleproject
 
 import nebula.test.IntegrationSpec
-import org.ajoberstar.grgit.Grgit
+import org.eclipse.jgit.api.Git
+import org.eclipse.jgit.transport.URIish
 
 import java.nio.file.Paths
 
@@ -11,7 +12,7 @@ import java.nio.file.Paths
  */
 abstract class AbstractPluginSpec extends IntegrationSpec {
 
-    protected Grgit grgit
+    protected Git git
     File gradleProperties
     File pluginClass
     File changelogFile
@@ -81,14 +82,17 @@ public class HelloWorldPlugin implements Plugin<Project> {
    * Init
    ### NEXT_VERSION_DESCRIPTION_END
 """
-
-        grgit = Grgit.init(dir: projectDir)
-        grgit.add(patterns: ['**/**'])
-        grgit.commit(message: 'init', all: true)
+        git = Git.init().setDirectory(projectDir).setBare(false).call()
+        git.add().addFilepattern('**/**').call()
+        git.commit().setMessage('init').setAll(true).call()
+        git.remoteSetUrl()
+                .setRemoteUri(new URIish("file://${projectDir}/"))
+                .setRemoteName("origin")
+                .call()
 
     }
 
     def cleanup() {
-        grgit.close()
+        git.close()
     }
 }
