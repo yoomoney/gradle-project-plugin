@@ -1,10 +1,10 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.7.0]() (29-07-2019)
+
 * Обновлён `yamoney-build-monitoring-plugin`=`1.3.0`->`2.0.0`,
 с отправкой метрик в продакшен графану
 * Обновлён `yamoney-architecture-test-plugin`=`1.4.0`->`1.5.0`,
 с обновлением наборов тестов
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.6.6]() (12-07-2019)
 
 * Повышена версия yamoney-java-module-plugin до 1.14.1
