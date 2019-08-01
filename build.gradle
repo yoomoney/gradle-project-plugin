@@ -16,7 +16,7 @@ gradlePlugin {
 
 dependencies {
     compile localGroovy(),
-            'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:4.0.1',
+            'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:4.0.2',
             'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:2.0.1',
             'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.61',
             'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.14.1',
