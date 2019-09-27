@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Исправлено добавление исходников котлин в sources.jar
 ### NEXT_VERSION_DESCRIPTION_END
 ## [5.7.2]() (01-08-2019)
 
