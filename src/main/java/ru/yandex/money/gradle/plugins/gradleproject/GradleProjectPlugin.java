@@ -2,12 +2,11 @@ package ru.yandex.money.gradle.plugins.gradleproject;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
-import org.gradle.api.publish.maven.plugins.MavenPublishPlugin;
 import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin;
 import org.gradle.util.VersionNumber;
 import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestPlugin;
 import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
-import ru.yandex.money.gradle.plugins.gradleproject.publishing.PublishingConfigurer;
+import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.release.ReleasePlugin;
 import ru.yandex.money.gradle.plugins.task.monitoring.BuildMonitoringPlugin;
@@ -25,7 +24,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
 
     private static final Collection<Class<?>> PLUGINS_TO_APPLY = Arrays.asList(
             JavaModulePlugin.class,
-            MavenPublishPlugin.class,
+            JavaArtifactPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
             BuildMonitoringPlugin.class,
@@ -40,8 +39,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
 
         project.getPluginManager().apply(JavaGradlePluginPlugin.class);
         configureRepos(project);
-
-        new PublishingConfigurer().init(project);
+        ExtensionConfigurator.configurePublishPlugin(project);
         PLUGINS_TO_APPLY.forEach(pluginClass -> project.getPluginManager().apply(pluginClass));
         ExtensionConfigurator.configure(project);
     }

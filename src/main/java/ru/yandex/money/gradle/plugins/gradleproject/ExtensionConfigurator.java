@@ -1,8 +1,12 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.gradle.api.Project;
+import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
 import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestExtension;
 import ru.yandex.money.gradle.plugins.gradleproject.git.GitManager;
+import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishExtension;
+import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.EmailConnectionExtension;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.GitConnectionExtension;
 import ru.yandex.money.gradle.plugins.release.ReleaseExtension;
@@ -15,6 +19,7 @@ import java.util.Arrays;
  * @author Dmitry Komarov
  * @since 05.12.2018
  */
+@SuppressFBWarnings("HARD_CODE_PASSWORD")
 public class ExtensionConfigurator {
     private static final String GIT_EMAIL = "SvcReleaserBackend@yamoney.ru";
     private static final String GIT_USER = "SvcReleaserBackend";
@@ -29,6 +34,25 @@ public class ExtensionConfigurator {
         configureReleasePlugin(project);
         configureArchitectureTestPlugin(project);
     }
+
+    /**
+     * Сконфигурировать публикацию
+     */
+    static void configurePublishPlugin(Project project) {
+        //Создаем extension сами, для того, чтобы выставить очередность afterEvaluate
+        project.getExtensions().create(JavaArtifactPublishPlugin.Companion.getEXTENSION_NAME(),
+                JavaArtifactPublishExtension.class);
+        project.getExtensions().getExtraProperties().set("pluginId", "");
+        project.getExtensions().getByType(GradlePluginDevelopmentExtension.class).setAutomatedPublishing(false);
+        JavaArtifactPublishExtension publishExtension = project.getExtensions().getByType(JavaArtifactPublishExtension.class);
+        publishExtension.setNexusUser(System.getenv("NEXUS_USER"));
+        publishExtension.setNexusPassword(System.getenv("NEXUS_PASSWORD"));
+        project.afterEvaluate(p -> {
+            publishExtension.setGroupId("ru.yandex.money.gradle.plugins");
+            publishExtension.setArtifactId((String) project.property("pluginId"));
+        });
+    }
+
 
     private static void configureReleasePlugin(Project project) {
         ReleaseExtension releaseExtension = project.getExtensions().getByType(ReleaseExtension.class);
