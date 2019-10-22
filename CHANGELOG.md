@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.7.6]() (22-10-2019)
+
 * Подключен yamoney-java-artifact-publish плагин
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.7.5]() (21-10-2019)
 
 * Поднятие версии yamoney-git-expired-branch-plugin 4.0.3 -> 4.1.1
