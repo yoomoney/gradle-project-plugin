@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Подключен yamoney-java-artifact-publish плагин
 ### NEXT_VERSION_DESCRIPTION_END
 ## [5.7.5]() (21-10-2019)
 

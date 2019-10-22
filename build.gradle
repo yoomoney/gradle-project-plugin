@@ -4,11 +4,10 @@ buildscript {
 apply plugin: 'yamoney-gradle-project-plugin'
 
 pluginId = 'yamoney-gradle-project-plugin'
-group='test-group'
 gradlePlugin {
     plugins {
         gradleProjectPlugin {
-            id = project.ext.pluginId
+            id = pluginId
             implementationClass = "ru.yandex.money.gradle.plugins.gradleproject.GradleProjectPlugin"
         }
     }
@@ -17,9 +16,10 @@ gradlePlugin {
 dependencies {
     compile localGroovy(),
             'ru.yandex.money.gradle.plugins:yamoney-git-expired-branch-plugin:4.1.1',
+            'ru.yandex.money.gradle.plugins:yamoney-java-artifact-publish-plugin:1.0.0',
             'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:2.0.1',
             'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.61',
-            'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.14.1',
+            'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:1.15.0',
             'ru.yandex.money.gradle.plugins:yamoney-build-monitoring-plugin:2.0.1',
             'ru.yandex.money.gradle.plugins:yamoney-architecture-test-plugin:1.5.0'
     
