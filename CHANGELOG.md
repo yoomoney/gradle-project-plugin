@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Обновлена версия `yamoney-git-expired-branch-plugin` 4.1.1 -> 4.2.1
 ### NEXT_VERSION_DESCRIPTION_END
 ## [5.9.0]() (22-11-2019)
 
