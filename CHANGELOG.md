@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.10.0]() (29-11-2019)
+
 * Обновлена версия `yamoney-git-expired-branch-plugin` 4.1.1 -> 4.2.1
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.9.0]() (22-11-2019)
 
 * Обновлена версия `java-module-plugin` 1.16.0 -> 1.17.0
