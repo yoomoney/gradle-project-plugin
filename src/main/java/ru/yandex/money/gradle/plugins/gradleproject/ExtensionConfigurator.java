@@ -1,7 +1,6 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
 import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
 import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestExtension;
@@ -38,7 +37,7 @@ public class ExtensionConfigurator {
 
     private static String getStringExtProperty(Project project, String propertyName) {
         String value = (String)project.getExtensions().getExtraProperties().get(propertyName);
-        if (StringUtils.isBlank(value)) {
+        if (value == null || value.isEmpty() ) {
             throw new IllegalArgumentException("property " + propertyName + " is empty");
         }
         return value;
@@ -49,7 +48,7 @@ public class ExtensionConfigurator {
      */
     static void configurePublishPlugin(Project project) {
         //Создаем extension сами, для того, чтобы выставить очередность afterEvaluate
-        project.getExtensions().create(JavaArtifactPublishPlugin.Companion.getExtensionName(),
+        project.getExtensions().create(JavaArtifactPublishPlugin.extensionName,
                 JavaArtifactPublishExtension.class);
         project.getExtensions().getExtraProperties().set("pluginId", "");
         project.getExtensions().getByType(GradlePluginDevelopmentExtension.class).setAutomatedPublishing(false);
