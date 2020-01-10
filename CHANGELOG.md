@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [5.11.0]() (10-01-2020)
+
 * Обновлён `yamoney-architecture-test-plugin`=`1.5.0`->`1.6.0`
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.10.0]() (29-11-2019)
 
 * Обновлена версия `yamoney-git-expired-branch-plugin` 4.1.1 -> 4.2.1
