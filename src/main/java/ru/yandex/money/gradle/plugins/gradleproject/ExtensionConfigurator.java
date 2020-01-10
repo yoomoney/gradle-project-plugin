@@ -98,8 +98,6 @@ public class ExtensionConfigurator {
 
     private static void configureArchitectureTestPlugin(Project project) {
         ArchitectureTestExtension architectureTestExtension = project.getExtensions().getByType(ArchitectureTestExtension.class);
-        architectureTestExtension.getInclude().addAll(Arrays.asList(
-                "check_unique_enums_codes",
-                "check_unique_enums_secondary_codes"));
+        architectureTestExtension.getInclude().add("check_unique_enums_codes");
     }
 }
