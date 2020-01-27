@@ -3,6 +3,10 @@
 * Поднята версия gradle: 4.10.2 -> 6.0.1. 
 **breaking changes** Для сборки плагина необходимо, чтобы проект поддерживал сборку с 6 версией gradle.
 ### NEXT_VERSION_DESCRIPTION_END
+## [5.11.0]() (10-01-2020)
+
+* Обновлён `yamoney-architecture-test-plugin`=`1.5.0`->`1.6.0`
+
 ## [5.10.0]() (29-11-2019)
 
 * Обновлена версия `yamoney-git-expired-branch-plugin` 4.1.1 -> 4.2.1
