@@ -1,6 +1,7 @@
 package ru.yandex.money.gradle.plugins.gradleproject;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
 import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
 import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestExtension;
@@ -37,7 +38,7 @@ public class ExtensionConfigurator {
 
     private static String getStringExtProperty(Project project, String propertyName) {
         String value = (String)project.getExtensions().getExtraProperties().get(propertyName);
-        if (value == null || value.isEmpty() ) {
+        if (StringUtils.isBlank(value)) {
             throw new IllegalArgumentException("property " + propertyName + " is empty");
         }
         return value;
