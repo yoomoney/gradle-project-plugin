@@ -49,7 +49,7 @@ public class ExtensionConfigurator {
      */
     static void configurePublishPlugin(Project project) {
         //Создаем extension сами, для того, чтобы выставить очередность afterEvaluate
-        project.getExtensions().create(JavaArtifactPublishPlugin.Companion.getExtensionName(),
+        project.getExtensions().create(JavaArtifactPublishPlugin.extensionName,
                 JavaArtifactPublishExtension.class);
         project.getExtensions().getExtraProperties().set("pluginId", "");
         project.getExtensions().getByType(GradlePluginDevelopmentExtension.class).setAutomatedPublishing(false);

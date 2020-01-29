@@ -38,11 +38,10 @@ repositories {
     maven { url 'https://nexus.yamoney.ru/repository/jcenter.bintray.com/' }
     maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
 
-
 }
 }
 apply plugin: "yamoney-gradle-project-plugin"
-
+System.setProperty("ignoreDeprecations", "true")
 pluginId = 'yamoney-hello-world-plugin'
 gradlePlugin {
     plugins {
@@ -58,8 +57,9 @@ javaModule {
 }
 
 dependencies {
-    compile localGroovy()
+    implementation localGroovy()
 }
+
 """
         gradleProperties << """version=1.1.3"""
 
