@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=MAJOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
-* Поднята версия gradle: 4.10.2 -> 6.0.1. 
+## [6.0.0]() (29-01-2020)
+
+* Поднята версия gradle: 4.10.2 -> 6.0.1.
 **breaking changes** Для сборки плагина необходимо, чтобы проект поддерживал сборку с 6 версией gradle.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [5.11.0]() (10-01-2020)
 
 * Обновлён `yamoney-architecture-test-plugin`=`1.5.0`->`1.6.0`
