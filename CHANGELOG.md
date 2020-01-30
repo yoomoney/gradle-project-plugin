@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.0.2]() (30-01-2020)
+
 * Удаление репозитория snapshots.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.0.1]() (30-01-2020)
 
 * Убраны снапшотные версии плагинов.
