@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.1.0]() (05-02-2020)
+
 * Сборка на java 11
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.0.2]() (30-01-2020)
 
 * Удаление репозитория snapshots.
