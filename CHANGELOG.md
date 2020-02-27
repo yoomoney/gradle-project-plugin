@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [6.2.0]() (27-02-2020)
 
 * Поднята версия yamoney-artifact-release-plugin: 3.0.1 -> 3.2.0.
