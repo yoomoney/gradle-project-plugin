@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
-* Поднята версия yamoney-artifact-release-plugin: 3.0.1 -> 3.2.0. 
+## [6.2.0]() (27-02-2020)
+
+* Поднята версия yamoney-artifact-release-plugin: 3.0.1 -> 3.2.0.
 Добавление ссылки на bitbucket pull request в changelog при релизе.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.1.0]() (05-02-2020)
 
 * Сборка на java 11
