@@ -1,5 +1,3 @@
-System.setProperty("platformGradleProjectVersion", "6.+")
-
 repositories {
     maven { url 'https://nexus.yamoney.ru/repository/thirdparty/' }
     maven { url 'https://nexus.yamoney.ru/repository/central/' }
@@ -8,7 +6,7 @@ repositories {
     maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
 
     dependencies {
-        classpath 'ru.yandex.money.gradle.plugins:yamoney-gradle-project-plugin:' +
-                System.getProperty("platformGradleProjectVersion")
+        classpath 'ru.yandex.money.gradle.plugins:yamoney-java-artifact-publish-plugin:2.+'
+        classpath 'ru.yandex.money.gradle.plugins:yamoney-artifact-release-plugin:3.+'
     }
 }

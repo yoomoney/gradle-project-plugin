@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Сборка плагина переведена с плагина gradle-project-plugin на файл configurator.gradle.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [6.2.0]() (27-02-2020)
 

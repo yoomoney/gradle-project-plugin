@@ -1,9 +1,10 @@
 buildscript {
     apply from: 'project.gradle', to: buildscript
 }
-apply plugin: 'yamoney-gradle-project-plugin'
 
-pluginId = 'yamoney-gradle-project-plugin'
+apply from: 'configurator.gradle'
+
+def pluginId = 'yamoney-gradle-project-plugin'
 gradlePlugin {
     plugins {
         gradleProjectPlugin {
@@ -22,8 +23,7 @@ dependencies {
             'ru.yandex.money.gradle.plugins:yamoney-java-module-plugin:2.0.1',
             'ru.yandex.money.gradle.plugins:yamoney-build-monitoring-plugin:3.0.1',
             'ru.yandex.money.gradle.plugins:yamoney-architecture-test-plugin:2.0.1'
-    
+
     testImplementation gradleTestKit(),
             'com.netflix.nebula:nebula-test:7.4.0'
-
 }
