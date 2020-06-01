@@ -106,12 +106,12 @@ void configurePublish() {
 }
 
 /**
- * Предназначен для проверки наличия SNAPSHOT зависимостей компонента.
+ * Предназначен для проверки наличия SNAPSHOT зависимостей плагина
  */
 task checkSnapshotsDependencies {
     doLast {
-        def isForceRelease = project.hasProperty("allowSnapshot") && project.getProperty("allowSnapshot") == "true"
-        if (isForceRelease) {
+        def isAllowSnapshot = project.hasProperty("allowSnapshot") && project.getProperty("allowSnapshot") == "true"
+        if (isAllowSnapshot) {
             logger.lifecycle("Snapshot dependencies are allowed. SKIPPED")
             return
         }
