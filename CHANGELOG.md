@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.3.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/2) (01-06-2020)
+
 * Сборка плагина переведена с плагина gradle-project-plugin на файл configurator.gradle.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.2.0]() (27-02-2020)
 
 * Поднята версия yamoney-artifact-release-plugin: 3.0.1 -> 3.2.0.
