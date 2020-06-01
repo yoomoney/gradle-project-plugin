@@ -1,3 +1,5 @@
+import org.gradle.api.internal.artifacts.dependencies.ProjectDependencyInternal
+
 buildscript {
     repositories {
         maven { url 'https://nexus.yamoney.ru/repository/central/' }
@@ -21,7 +23,6 @@ configureJar()
 
 //создаем таски, которые вызываются в общем скрипте сборки, но для данного проекта неважны
 task checkCoverage()
-task checkSnapshotsDependencies()
 task componentTest(type: Test)
 
 void configureRelease() {
@@ -101,5 +102,34 @@ void configurePublish() {
         nexusPassword = System.getenv("NEXUS_PASSWORD")
         groupId = 'ru.yandex.money.gradle.plugins'
         artifactId = 'yamoney-gradle-project-plugin'
+    }
+}
+
+/**
+ * Предназначен для проверки наличия SNAPSHOT зависимостей компонента.
+ */
+task checkSnapshotsDependencies {
+    doLast {
+        def isForceRelease = project.hasProperty("allowSnapshot") && project.getProperty("allowSnapshot") == "true"
+        if (isForceRelease) {
+            logger.lifecycle("Snapshot dependencies are allowed. SKIPPED")
+            return
+        }
+
+        Set snapshotPackages = []
+
+        project.configurations.each { conf ->
+            conf.allDependencies.findAll { dep -> !(dep instanceof ProjectDependencyInternal) }
+                    .each { dep ->
+                        if (dep.version?.toUpperCase()?.endsWith('-SNAPSHOT') ||
+                                dep.version?.matches('^.+(\\d{8}\\.\\d{6}\\-\\d+)$')) {
+                            snapshotPackages.add("${dep.group}:${dep.name}:${dep.version}")
+                        }
+                    }
+        }
+
+        if (!snapshotPackages.isEmpty()) {
+            throw new IllegalStateException("You have the following SNAPSHOT dependencies:\r\n${snapshotPackages}")
+        }
     }
 }
