@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.4.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/3) (02-07-2020)
+
 * Поднята версия gradle: 6.0.1 -> 6.5.1.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.3.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/2) (01-06-2020)
 
 * Сборка плагина переведена с плагина gradle-project-plugin на файл configurator.gradle.
