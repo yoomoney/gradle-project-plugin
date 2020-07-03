@@ -1,11 +1,11 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.4.2](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/5) (03-07-2020)
+
 * Опущена версия gradle: 6.5.1 -> 6.4.1.
 * Поднята версия yamoney-git-expired-branch-plugin: 5.0.1 -> 5.1.1
 * Поднята версия yamoney-java-artifact-publish-plugin: 2.0.1 -> 2.1.0
 * Поднята версия yamoney-build-monitoring-plugin: 3.0.1 -> 3.2.0
 * Поднята версия yamoney-architecture-test-plugin: 2.0.1 -> 2.2.1
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.4.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/4) (02-07-2020)
 
 * Поднята версия yamoney-java-module-plugin:2.0.1 -> 2.7.1
