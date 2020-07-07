@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.4.3](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/6) (07-07-2020)
+
 * Поднята версия kotlin 1.3.50 -> 1.3.71
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.4.2](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/5) (03-07-2020)
 
 * Опущена версия gradle: 6.5.1 -> 6.4.1.
