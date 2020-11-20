@@ -27,4 +27,3 @@ dependencies {
     testImplementation gradleTestKit(),
             'com.netflix.nebula:nebula-test:7.4.0'
 }
-
