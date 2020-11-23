@@ -30,7 +30,7 @@ void configureRelease() {
         releaseTasks = ["build", "publish"]
         pathToGitPrivateSshKey = System.getenv("GIT_PRIVATE_SSH_KEY_PATH")
         gitUsername = "SvcReleaserBackend"
-        gitEmail = "SvcReleaserBackend@yamoney.ru"
+        gitEmail = "SvcReleaserBackend@yoomoney.ru"
         changelogRequired = true
         addPullRequestLinkToChangelog = true
         bitbucketUser = System.getenv("BITBUCKET_USER")
