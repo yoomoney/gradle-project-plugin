@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.5.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/9) (27-11-2020)
+
 * Опущена версия kotlin 1.3.71 -> 1.3.50
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.5.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/8) (23-11-2020)
 
 * Обновлена версия yamoney-architecture-test-plugin: 2.2.1 -> 2.3.1
