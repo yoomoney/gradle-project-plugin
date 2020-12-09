@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Поднята версия yamoney-git-expired-branch-plugin: 5.1.1 -> 5.2.2
 ### NEXT_VERSION_DESCRIPTION_END
 ## [6.5.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/9) (27-11-2020)
 
