@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.6.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/10) (09-12-2020)
+
 * Поднята версия yamoney-git-expired-branch-plugin: 5.1.1 -> 5.2.2
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.5.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/9) (27-11-2020)
 
 * Опущена версия kotlin 1.3.71 -> 1.3.50
