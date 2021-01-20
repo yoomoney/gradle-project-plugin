@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [6.7.0]() (20-01-2021)
+
 * Переключение на плагин artifact-release-plugin из github: ru.yandex.money.gradle.plugins -> ru.yoomoney.gradle.plugins
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [6.6.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/10) (09-12-2020)
 
 * Поднята версия yamoney-git-expired-branch-plugin: 5.1.1 -> 5.2.2
