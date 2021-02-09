@@ -1,5 +1,7 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Переключение на плагин java-plugin из github: ru.yandex.money.gradle.plugins -> ru.yoomoney.gradle.plugins.
+* Подключен плагин check-dependencies-plugin. Ранее подключался через java-plugin.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [6.7.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/12) (22-01-2021)
 
