@@ -50,19 +50,20 @@ public class ExtensionConfigurator {
     private static void configureWrapper(Project project) {
         project.getTasks().maybeCreate("wrapper", Wrapper.class)
                 .setDistributionUrl("https://nexus.yamoney.ru/content/repositories/" +
-                        "http-proxy-services.gradle.org/distributions/gradle-6.0.1-all.zip");
+                        "http-proxy-services.gradle.org/distributions/gradle-6.4.1-all.zip");
     }
 
     private static void configureJavaPlugin(Project project) {
-        List<String> repositories = List.of(
-                "https://nexus.yamoney.ru/content/repositories/releases/",
-                "https://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/",
-                "https://nexus.yamoney.ru/content/repositories/thirdparty/",
-                "https://nexus.yamoney.ru/content/repositories/central/");
-
         List<String> snapshotsRepositories = List.of(
                 project.getRepositories().mavenLocal().getUrl().toString(),
                 "https://nexus.yamoney.ru/content/repositories/snapshots/");
+
+        List<String> repositories = List.of(
+                "https://nexus.yamoney.ru/content/repositories/releases/",
+                "https://nexus.yamoney.ru/content/repositories/central/",
+                "https://nexus.yamoney.ru/content/repositories/jcenter.bintray.com/",
+                "https://nexus.yamoney.ru/content/repositories/thirdparty/"
+        );
 
         JavaExtension extension = project.getExtensions().getByType(JavaExtension.class);
         extension.setRepositories(repositories);
@@ -140,7 +141,6 @@ public class ExtensionConfigurator {
 
     private static void configureMajorVersionCheckerExtension(Project project) {
         Set<String> includeGroupId = new HashSet<>();
-        includeGroupId.add("ru.yamoney");
         includeGroupId.add("ru.yandex.money");
         includeGroupId.add("ru.yoomoney");
 
