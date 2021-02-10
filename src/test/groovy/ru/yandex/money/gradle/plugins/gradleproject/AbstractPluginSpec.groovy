@@ -29,17 +29,7 @@ abstract class AbstractPluginSpec extends IntegrationSpec {
         pluginClass.createNewFile()
 
         buildFile << """
-buildscript {
 
-repositories {
-    maven { url 'https://nexus.yamoney.ru/repository/thirdparty/' }
-    maven { url 'https://nexus.yamoney.ru/repository/central/' }
-    maven { url 'https://nexus.yamoney.ru/repository/releases/' }
-    maven { url 'https://nexus.yamoney.ru/repository/jcenter.bintray.com/' }
-    maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
-
-}
-}
 apply plugin: "yamoney-gradle-project-plugin"
 System.setProperty("ignoreDeprecations", "true")
 pluginId = 'yamoney-hello-world-plugin'

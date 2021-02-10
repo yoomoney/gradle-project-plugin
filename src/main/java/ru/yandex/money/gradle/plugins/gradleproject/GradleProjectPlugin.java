@@ -4,11 +4,10 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin;
 import org.gradle.util.VersionNumber;
-import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestPlugin;
-import ru.yandex.money.gradle.plugins.backend.build.JavaModulePlugin;
 import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.task.monitoring.BuildMonitoringPlugin;
+import ru.yoomoney.gradle.plugins.moduleproject.ModuleProjectPlugin;
 import ru.yoomoney.gradle.plugins.release.ReleasePlugin;
 
 import java.util.Arrays;
@@ -23,12 +22,11 @@ import java.util.Collection;
 public class GradleProjectPlugin implements Plugin<Project> {
 
     private static final Collection<Class<?>> PLUGINS_TO_APPLY = Arrays.asList(
-            JavaModulePlugin.class,
+            ModuleProjectPlugin.class,
             JavaArtifactPublishPlugin.class,
             ReleasePlugin.class,
             GitExpiredBranchPlugin.class,
-            BuildMonitoringPlugin.class,
-            ArchitectureTestPlugin.class
+            BuildMonitoringPlugin.class
     );
 
     @Override
