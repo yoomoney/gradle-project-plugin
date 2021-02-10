@@ -31,8 +31,8 @@ public class GradleProjectPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-        if (VersionNumber.parse(project.getGradle().getGradleVersion()).compareTo(VersionNumber.parse("4.10.2'")) < 0) {
-            throw new IllegalStateException("Gradle >= 4.10.2 is required");
+        if (VersionNumber.parse(project.getGradle().getGradleVersion()).compareTo(VersionNumber.parse("6.4.1'")) < 0) {
+            throw new IllegalStateException("Gradle >= 6.4.1 is required");
         }
 
         project.getPluginManager().apply(JavaGradlePluginPlugin.class);
