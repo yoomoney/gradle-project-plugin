@@ -1,6 +1,6 @@
 package ru.yandex.money.gradle.plugins.gradleproject
 
-import ru.yandex.money.gradle.plugins.library.dependencies.CheckDependenciesPlugin
+import ru.yoomoney.gradle.plugins.library.dependencies.CheckDependenciesPlugin
 
 /**
  * @author Oleg Kandaurov

@@ -3,8 +3,8 @@ package ru.yandex.money.gradle.plugins.gradleproject;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
+import org.gradle.api.tasks.wrapper.Wrapper;
 import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
-import ru.yandex.money.gradle.plugin.architecturetest.ArchitectureTestExtension;
 import ru.yandex.money.gradle.plugins.gradleproject.git.GitManager;
 import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishExtension;
 import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
@@ -24,6 +24,11 @@ import java.util.Arrays;
 public class ExtensionConfigurator {
     private static final String GIT_EMAIL = "SvcReleaserBackend@yoomoney.ru";
     private static final String GIT_USER = "SvcReleaserBackend";
+    /**
+     * Url, по которому будет скачиваться gradle в wrapper таске.
+     */
+    private static final String GRADLE_DISTRIBUTION_URL = "https://nexus.yamoney.ru/content/repositories/" +
+            "http-proxy-services.gradle.org/distributions/gradle-6.4.1-all.zip";
 
     /**
      * Конфигурирует плагины.
@@ -33,7 +38,12 @@ public class ExtensionConfigurator {
     static void configure(Project project) {
         configureGitExpiredBranchesPlugin(project);
         configureReleasePlugin(project);
-        configureArchitectureTestPlugin(project);
+        configureWrapper(project);
+    }
+
+    private static void configureWrapper(Project project) {
+        project.getTasks().maybeCreate("wrapper", Wrapper.class)
+                .setDistributionUrl(GRADLE_DISTRIBUTION_URL);
     }
 
     private static String getStringExtProperty(Project project, String propertyName) {
@@ -98,10 +108,5 @@ public class ExtensionConfigurator {
         gitConnectionExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
         gitConnectionExtension.setEmail(GIT_EMAIL);
         gitConnectionExtension.setUsername(GIT_USER);
-    }
-
-    private static void configureArchitectureTestPlugin(Project project) {
-        ArchitectureTestExtension architectureTestExtension = project.getExtensions().getByType(ArchitectureTestExtension.class);
-        architectureTestExtension.getInclude().add("check_unique_enums_codes");
     }
 }
