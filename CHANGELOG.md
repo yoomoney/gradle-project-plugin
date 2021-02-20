@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [6.9.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/15) (21-02-2021)
 
 * Поднята версия artifact-release-plugin до 3.8.1
