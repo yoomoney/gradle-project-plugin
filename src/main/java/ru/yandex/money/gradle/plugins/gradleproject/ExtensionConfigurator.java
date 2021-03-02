@@ -6,10 +6,10 @@ import org.gradle.api.Project;
 import org.gradle.api.tasks.wrapper.Wrapper;
 import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
 import ru.yandex.money.gradle.plugins.gradleproject.git.GitManager;
-import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishExtension;
-import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.EmailConnectionExtension;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.settings.GitConnectionExtension;
+import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishExtension;
+import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yoomoney.gradle.plugins.release.ReleaseExtension;
 
 import java.util.Arrays;
@@ -69,6 +69,9 @@ public class ExtensionConfigurator {
         project.afterEvaluate(p -> {
             publishExtension.setGroupId("ru.yandex.money.gradle.plugins");
             publishExtension.setArtifactId(getStringExtProperty(project, "pluginId"));
+
+            publishExtension.setSnapshotRepository("https://nexus.yamoney.ru/repository/snapshots/");
+            publishExtension.setReleaseRepository("https://nexus.yamoney.ru/repository/releases/");
         });
     }
 

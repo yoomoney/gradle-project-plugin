@@ -12,7 +12,7 @@ buildscript {
 
 apply plugin: 'groovy'
 apply plugin: 'java-gradle-plugin'
-apply plugin: 'yamoney-java-artifact-publish-plugin'
+apply plugin: 'ru.yoomoney.gradle.plugins.java-artifact-publish-plugin'
 apply plugin: 'ru.yoomoney.gradle.plugins.artifact-release-plugin'
 
 buildDir = file("target")
@@ -103,6 +103,8 @@ void configurePublish() {
         nexusPassword = System.getenv("NEXUS_PASSWORD")
         groupId = 'ru.yandex.money.gradle.plugins'
         artifactId = 'yamoney-gradle-project-plugin'
+        releaseRepository = 'https://nexus.yamoney.ru/repository/releases/'
+        snapshotRepository = 'https://nexus.yamoney.ru/repository/snapshots/'
     }
 }
 

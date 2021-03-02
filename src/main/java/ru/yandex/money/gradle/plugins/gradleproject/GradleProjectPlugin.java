@@ -4,9 +4,9 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin;
 import org.gradle.util.VersionNumber;
-import ru.yandex.money.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yandex.money.gradle.plugins.library.git.expired.branch.GitExpiredBranchPlugin;
 import ru.yandex.money.gradle.plugins.task.monitoring.BuildMonitoringPlugin;
+import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yoomoney.gradle.plugins.moduleproject.ModuleProjectPlugin;
 import ru.yoomoney.gradle.plugins.release.ReleasePlugin;
 
