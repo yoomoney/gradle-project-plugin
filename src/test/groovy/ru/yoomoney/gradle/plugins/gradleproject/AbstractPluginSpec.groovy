@@ -1,4 +1,4 @@
-package ru.yandex.money.gradle.plugins.gradleproject
+package ru.yoomoney.gradle.plugins.gradleproject
 
 import nebula.test.IntegrationSpec
 import org.eclipse.jgit.api.Git
@@ -30,13 +30,13 @@ abstract class AbstractPluginSpec extends IntegrationSpec {
 
         buildFile << """
 
-apply plugin: "yamoney-gradle-project-plugin"
+apply plugin: "ru.yoomoney.gradle.plugins.gradle-project-plugin"
 System.setProperty("ignoreDeprecations", "true")
-pluginId = 'yamoney-hello-world-plugin'
+artifactId = 'hello-world-plugin'
 gradlePlugin {
     plugins {
         helloWorldPlugin {
-            id = "\$pluginId"
+            id = "\$artifactId"
             implementationClass = "ru.yandex.money.gradle.plugins.helloworld.HelloWorldPlugin"
         }
     }
@@ -51,7 +51,11 @@ dependencies {
 }
 
 """
-        gradleProperties << """version=1.1.3"""
+        def key = new File(getClass().getResource("test_gpg_key.txt").toURI()).text
+
+        gradleProperties << "version=1.0.0-SNAPSHOT\n" +
+                "signingPassword=123456\n" +
+                "signingKey=$key"
 
         pluginClass << """
 package ru.yandex.money.gradle.plugins.helloworld;

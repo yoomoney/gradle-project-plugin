@@ -1,4 +1,4 @@
-package ru.yandex.money.gradle.plugins.gradleproject
+package ru.yoomoney.gradle.plugins.gradleproject
 
 import ru.yoomoney.gradle.plugins.library.dependencies.CheckDependenciesPlugin
 
