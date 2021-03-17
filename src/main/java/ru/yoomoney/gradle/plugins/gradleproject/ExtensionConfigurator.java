@@ -123,6 +123,10 @@ public class ExtensionConfigurator {
         ReleaseExtension releaseExtension = project.getExtensions().getByType(ReleaseExtension.class);
         releaseExtension.getReleaseTasks().clear();
 
+        //задачи, которые будут запускаться при релизе.
+        //publish - опубликавать артефакт
+        //publishPlugins - опубликовать плагин в Gradle Plugin Portal
+        //closeAndReleaseRepository - закрыть staging репозиторий и выпустить артефакт в релизный репозиторий (MavenCentral)
         releaseExtension.getReleaseTasks().addAll(Arrays.asList("build", "publish", "publishPlugins", "closeAndReleaseRepository"));
         releaseExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
         releaseExtension.setPassphraseToGitPrivateSshKey(System.getenv("GIT_KEY_PASSPHRASE"));
