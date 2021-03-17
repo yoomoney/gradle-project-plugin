@@ -7,41 +7,39 @@
 Данный плагин является базовым, и для собственной сборки использует скрипт (configurator.gradle).
 
 ## Подключение
-Для подключения в проект этого плагина, нужно добавить файл ```project.gradle```:
-```groovy
-System.setProperty("platformGradleProjectVersion", "5.+")
-repositories {
-    maven { url 'https://nexus.yamoney.ru/repository/thirdparty/' }
-    maven { url 'https://nexus.yamoney.ru/repository/central/' }
-    maven { url 'https://nexus.yamoney.ru/repository/releases/' }
-    maven { url 'https://nexus.yamoney.ru/repository/jcenter.bintray.com/' }
-    maven { url 'https://nexus.yamoney.ru/repository/gradle-plugins/' }
-
-    dependencies {
-        classpath 'ru.yandex.money.gradle.plugins:yamoney-gradle-project-plugin:' + 
-                System.getProperty("platformGradleProjectVersion")
-    }
-}
-```
-А в `build.gradle` добавить соответствующую секцию, чтобы конфигурационный файл выглядел подобным образом:
+Для подключения добавьте в build.gradle:
 ```groovy
 buildscript {
-    apply from: 'project.gradle', to: buildscript
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'ru.yoomoney.gradle.plugins.gradle-project-plugin:7.+'
+    }
 }
-apply plugin: 'yamoney-gradle-project-plugin'
+apply plugin: 'ru.yoomoney.gradle.plugins.gradle-project-plugin'
+```
 
-pluginId = 'yamoney-hello-world-plugin'
+Также нужно добавить описание вашего плагина:
+```groovy
+artifactId = 'hello-world-plugin' //обязательное свойство. применяется для публикации и для создания ссылок на проект в github
 gradlePlugin {
     plugins {
         helloWorldPlugin {
-            id = "$pluginId"
-            implementationClass = "ru.yandex.money.gradle.plugins.helloworld.HelloWorldPlugin"
+            id = "ru.yoomoney.hello-world-plugin"    //идентификатор, с помощью которого плагин можно подключать к проекту
+            implementationClass = "ru.yoomoney.gradle.plugins.helloworld.HelloWorldPlugin"
         }
     }
 }
-
-dependencies {
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.0'
-    testCompile gradleTestKit()
-}
 ```
+
+## Список подключаемых и конфигурируемых плагинов
+*  [ru.yoomoney.gradle.plugins:check-dependencies-plugin](https://github.com/yoomoney-gradle-plugins/check-dependencies-plugin);  
+*  [ru.yoomoney.gradle.plugins:java-artifact-publish-plugin](https://github.com/yoomoney-gradle-plugins/java-artifact-publish-plugin);  
+*  [ru.yoomoney.gradle.plugins:artifact-release-plugin](https://github.com/yoomoney-gradle-plugins/artifact-release-plugin);  
+*  [ru.yoomoney.gradle.plugins:java-plugin](https://github.com/yoomoney-gradle-plugins/java-plugin);  
+*  [io.spring.dependency-management](https://docs.spring.io/dependency-management-plugin/docs/current/reference/html/);
+*  [com.gradle.publish:plugin-publish-plugin](https://docs.gradle.org/current/userguide/publishing_gradle_plugins.html);
+*  [gradle-nexus-staging-plugin](https://github.com/Codearte/gradle-nexus-staging-plugin) - предоставляет задачу closeAndReleaseRepository:
+   закрыть staging репозиторий и выпустить артефакт в релизный репозиторий (MavenCentral).  
+   Подробности об этом процессе: https://central.sonatype.org/pages/releasing-the-deployment.html.

@@ -1,20 +1,30 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MAJOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Внесены изменения в связи с переходом на GitHub:
+  * Переименованы пакеты
+  * Сборка переведена на travis (ранее использовался jenkins)
+* Изменен список подключаемых плагинов, теперь подключаются:
+  *  ru.yoomoney.gradle.plugins:check-dependencies-plugin;
+  *  io.spring.dependency-management;
+  *  ru.yoomoney.gradle.plugins:java-artifact-publish-plugin;
+  *  ru.yoomoney.gradle.plugins:artifact-release-plugin;
+  *  com.gradle.publish:plugin-publish-plugin;
+  *  ru.yoomoney.gradle.plugins:java-plugin.
+
 ### NEXT_VERSION_DESCRIPTION_END
-## [6.10.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/16) (05-03-2021)
+## [6.10.0]() (05-03-2021)
 
 * Переключение на плагин java-artifact-publish-plugin из github: ru.yandex.money.gradle.plugins -> ru.yoomoney.gradle.plugins
 
-## [6.9.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/15) (21-02-2021)
+## [6.9.0]() (21-02-2021)
 
 * Поднята версия artifact-release-plugin до 3.8.1
 
-## [6.8.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/14) (12-02-2021)
+## [6.8.0]() (12-02-2021)
 
-* Подключение java-module-plugin и artifact-dependencies-plugin заменено на подключение
-[module-project-plugin](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/module-project-plugin/browse)
+* Подключение java-module-plugin и artifact-dependencies-plugin заменено на подключение module-project-plugin
 
-## [6.7.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/12) (22-01-2021)
+## [6.7.1]() (22-01-2021)
 
 * Поднята версия artifact-release-plugin 3.5.1 -> 3.6.0
 
@@ -22,23 +32,23 @@
 
 * Переключение на плагин artifact-release-plugin из github: ru.yandex.money.gradle.plugins -> ru.yoomoney.gradle.plugins
 
-## [6.6.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/10) (09-12-2020)
+## [6.6.0]() (09-12-2020)
 
 * Поднята версия yamoney-git-expired-branch-plugin: 5.1.1 -> 5.2.2
 
-## [6.5.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/9) (27-11-2020)
+## [6.5.1]() (27-11-2020)
 
 * Опущена версия kotlin 1.3.71 -> 1.3.50
 
-## [6.5.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/8) (23-11-2020)
+## [6.5.0]() (23-11-2020)
 
 * Обновлена версия yamoney-architecture-test-plugin: 2.2.1 -> 2.3.1
 
-## [6.4.3](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/6) (07-07-2020)
+## [6.4.3]() (07-07-2020)
 
 * Поднята версия kotlin 1.3.50 -> 1.3.71
 
-## [6.4.2](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/5) (03-07-2020)
+## [6.4.2]() (03-07-2020)
 
 * Опущена версия gradle: 6.5.1 -> 6.4.1.
 * Поднята версия yamoney-git-expired-branch-plugin: 5.0.1 -> 5.1.1
@@ -46,15 +56,15 @@
 * Поднята версия yamoney-build-monitoring-plugin: 3.0.1 -> 3.2.0
 * Поднята версия yamoney-architecture-test-plugin: 2.0.1 -> 2.2.1
 
-## [6.4.1](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/4) (02-07-2020)
+## [6.4.1]() (02-07-2020)
 
 * Поднята версия yamoney-java-module-plugin:2.0.1 -> 2.7.1
 
-## [6.4.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/3) (02-07-2020)
+## [6.4.0]() (02-07-2020)
 
 * Поднята версия gradle: 6.0.1 -> 6.5.1.
 
-## [6.3.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/gradle-project-plugin/pull-requests/2) (01-06-2020)
+## [6.3.0]() (01-06-2020)
 
 * Сборка плагина переведена с плагина gradle-project-plugin на файл configurator.gradle.
 
