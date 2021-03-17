@@ -61,7 +61,7 @@ public class ExtensionConfigurator {
 
             bundleExtension.setWebsite(format("https://github.com/yoomoney-gradle-plugins/%s", artifactId));
             bundleExtension.setVcsUrl(format("https://github.com/yoomoney-gradle-plugins/%s.git", artifactId));
-            bundleExtension.setTags(Arrays.asList("plugin", "gradle"));
+            bundleExtension.setTags(Arrays.asList("plugin", "gradle", "yoomoney"));
             bundleExtension.setDescription(getDescription(artifactId));
         });
     }
