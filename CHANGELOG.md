@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [7.0.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/1) (18-03-2021)
 
 * Внесены изменения в связи с переходом на GitHub:
