@@ -1,17 +1,16 @@
-### NEXT_VERSION_TYPE=MAJOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
-* Внесены изменения в связи с переходом на GitHub:
-  * Переименованы пакеты
-  * Сборка переведена на travis (ранее использовался jenkins)
-* Изменен список подключаемых плагинов, теперь подключаются:
-  *  ru.yoomoney.gradle.plugins:check-dependencies-plugin;
-  *  io.spring.dependency-management;
-  *  ru.yoomoney.gradle.plugins:java-artifact-publish-plugin;
-  *  ru.yoomoney.gradle.plugins:artifact-release-plugin;
-  *  com.gradle.publish:plugin-publish-plugin;
-  *  ru.yoomoney.gradle.plugins:java-plugin.
+## [7.0.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/1) (18-03-2021)
 
-### NEXT_VERSION_DESCRIPTION_END
+* Внесены изменения в связи с переходом на GitHub:
+* Переименованы пакеты
+* Сборка переведена на travis (ранее использовался jenkins)
+* Изменен список подключаемых плагинов, теперь подключаются:
+*  ru.yoomoney.gradle.plugins:check-dependencies-plugin;
+*  io.spring.dependency-management;
+*  ru.yoomoney.gradle.plugins:java-artifact-publish-plugin;
+*  ru.yoomoney.gradle.plugins:artifact-release-plugin;
+*  com.gradle.publish:plugin-publish-plugin;
+*  ru.yoomoney.gradle.plugins:java-plugin.
+
 ## [6.10.0]() (05-03-2021)
 
 * Переключение на плагин java-artifact-publish-plugin из github: ru.yandex.money.gradle.plugins -> ru.yoomoney.gradle.plugins
