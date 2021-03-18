@@ -7,7 +7,7 @@ repositories {
 }
 
 releaseSettings {
-    releaseTasks = ["build", "publish", "publishPlugins", "closeAndReleaseRepository"]
+    releaseTasks = ["build", "publish", "closeRepository", "releaseRepository", "publishPlugins"]
     pathToGitPrivateSshKey = System.getenv("GIT_PRIVATE_SSH_KEY_PATH")
     passphraseToGitPrivateSshKey = System.getenv("GIT_KEY_PASSPHRASE")
     gitUsername = "yoomoney-robot"
