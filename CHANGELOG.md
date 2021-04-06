@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Добавлена зависимости на таску checkChangelog для feature веток. Необходимо для проверки заполненности changelog при разработке.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.1.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/2) (30-03-2021)
 
