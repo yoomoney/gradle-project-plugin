@@ -7,6 +7,7 @@ import org.gradle.api.Project;
 import org.gradle.api.tasks.wrapper.Wrapper;
 import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
 import ru.yoomoney.gradle.plugins.backend.build.JavaExtension;
+import ru.yoomoney.gradle.plugins.backend.build.git.GitManager;
 import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishExtension;
 import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yoomoney.gradle.plugins.javapublishing.PublicationAdditionalInfo;
@@ -140,6 +141,13 @@ public class ExtensionConfigurator {
 
         releaseExtension.setPullRequestInfoProvider("GitHub");
         releaseExtension.setGithubAccessToken(System.getenv("GITHUB_TOKEN"));
+
+        try (GitManager git = new GitManager(project)) {
+            if (git.isDevelopmentBranch()) {
+                project.getTasks().getByName("build")
+                        .dependsOn(project.getTasks().getByName("checkChangelog"));
+            }
+        }
     }
 
     private static void configureJavaPlugin(Project project) {
