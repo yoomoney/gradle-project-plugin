@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [7.2.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/3) (08-04-2021)
 
 * Добавлена зависимости на таску checkChangelog для feature веток. Необходимо для проверки заполненности changelog при разработке.
