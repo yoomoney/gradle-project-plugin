@@ -1,13 +1,18 @@
 repositories {
-    maven {
-        url "https://plugins.gradle.org/m2/"
-    }
+    maven { url "https://plugins.gradle.org/m2/" }
     mavenCentral()
-    jcenter()
 }
 
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'ru.yoomoney.gradle.plugins.java-artifact-publish-plugin'
+apply plugin: 'io.github.gradle-nexus.publish-plugin'
+apply plugin: 'com.gradle.plugin-publish'
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'ru.yoomoney.gradle.plugins.artifact-release-plugin'
+
 releaseSettings {
-    releaseTasks = ["build", "publish", "closeRepository", "releaseRepository", "publishPlugins"]
+    releaseTasks = ["build", "publish", "closeAndReleaseSonatypeStagingRepository", "publishPlugins"]
     pathToGitPrivateSshKey = System.getenv("GIT_PRIVATE_SSH_KEY_PATH")
     passphraseToGitPrivateSshKey = System.getenv("GIT_KEY_PASSPHRASE")
     gitUsername = "yoomoney-robot"
@@ -18,10 +23,14 @@ releaseSettings {
     githubAccessToken = System.getenv("GITHUB_TOKEN")
 }
 
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'ru.yoomoney.gradle.plugins.java-artifact-publish-plugin'
-apply plugin: 'io.codearte.nexus-staging'
+nexusPublishing {
+    repositories {
+        sonatype {
+            username = System.getenv("NEXUS_USER")
+            password = System.getenv("NEXUS_PASSWORD")
+        }
+    }
+}
 
 javaArtifactPublishSettings {
     nexusUser = System.getenv("NEXUS_USER")
@@ -127,12 +136,6 @@ pluginBundle {
     vcsUrl = 'https://github.com/yoomoney-gradle-plugins/gradle-project-plugin.git'
     description = 'Gradle project plugin'
     tags = ['gradle', 'plugin', 'yoomoney']
-}
-
-nexusStaging {
-    username = System.getenv("NEXUS_USER")
-    password = System.getenv("NEXUS_PASSWORD")
-    packageGroup = "ru.yoomoney"
 }
 
 project.getExtensions().getByType(GradlePluginDevelopmentExtension.class).setAutomatedPublishing(false)
