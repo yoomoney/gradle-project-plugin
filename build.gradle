@@ -1,19 +1,15 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+
         dependencies {
             classpath 'ru.yoomoney.gradle.plugins:artifact-release-plugin:3.11.1'
-            classpath 'ru.yoomoney.gradle.plugins:java-artifact-publish-plugin:3.0.2'
+            classpath 'ru.yoomoney.gradle.plugins:java-artifact-publish-plugin:3.1.0'
             classpath 'com.gradle.publish:plugin-publish-plugin:0.13.0'
-            classpath 'io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.30.0'
+            classpath 'io.github.gradle-nexus:publish-plugin:1.0.0'
         }
     }
-}
-
-plugins {
-    id "com.gradle.plugin-publish" version "0.12.0"
-    id "java-gradle-plugin"
-    id "ru.yoomoney.gradle.plugins.artifact-release-plugin" version "3.7.0"
 }
 
 apply from: 'configurator.gradle'
@@ -31,12 +27,12 @@ gradlePlugin {
 dependencies {
     api localGroovy(),
             'ru.yoomoney.gradle.plugins:java-artifact-publish-plugin:3.0.2',
-            'ru.yoomoney.gradle.plugins:artifact-release-plugin:3.8.1',
+            'ru.yoomoney.gradle.plugins:artifact-release-plugin:3.11.1',
             'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50',
             'ru.yoomoney.gradle.plugins:java-plugin:4.0.0',
             'ru.yoomoney.gradle.plugins:check-dependencies-plugin:7.1.2',
             'com.gradle.publish:plugin-publish-plugin:0.13.0',
-            'io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.30.0'
+            'io.github.gradle-nexus:publish-plugin:1.0.0'
 
     testImplementation gradleTestKit(),
             'com.netflix.nebula:nebula-test:7.4.0'

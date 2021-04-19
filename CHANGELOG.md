@@ -1,5 +1,8 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Плагин по работе со staging репозиториями gradle-nexus-staging-plugin заменен на io.github.gradle-nexus:publish-plugin.
+Старый плагин работал нестабильно из-за того, что не обрабатывал случаи с несколькими staging репозиториями. Новый плагин лишен 
+  этого недостатка.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.2.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/3) (08-04-2021)
 
