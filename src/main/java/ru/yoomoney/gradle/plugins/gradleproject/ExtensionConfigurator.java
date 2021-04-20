@@ -28,6 +28,8 @@ import static java.lang.String.format;
 public class ExtensionConfigurator {
     private static final String GIT_EMAIL = "SvcReleaserBackend@yoomoney.ru";
     private static final String GIT_USER = "yoomoney-robot";
+    private static final String PLUGIN_GROUP = "ru.yoomoney.gradle.plugins";
+
     /**
      * Url, по которому будет скачиваться gradle в wrapper таске.
      */
@@ -54,6 +56,8 @@ public class ExtensionConfigurator {
      */
     private static void configureNexusStaging(Project project) {
         NexusPublishExtension nexusPublishingExtension = project.getExtensions().getByType(NexusPublishExtension.class);
+
+        nexusPublishingExtension.getPackageGroup().set(PLUGIN_GROUP);
 
         nexusPublishingExtension.getRepositories().sonatype(nexusRepository -> {
             nexusRepository.getUsername().set(System.getenv("NEXUS_USER"));
@@ -118,7 +122,7 @@ public class ExtensionConfigurator {
             publicationAdditionalInfo.setDevelopers(developers);
             publishExtension.setPublicationAdditionalInfo(publicationAdditionalInfo);
 
-            publishExtension.setGroupId("ru.yoomoney.gradle.plugins");
+            publishExtension.setGroupId(PLUGIN_GROUP);
             publishExtension.setArtifactId(artifactId);
 
             publishExtension.setSnapshotRepository("https://oss.sonatype.org/content/repositories/snapshots/");
