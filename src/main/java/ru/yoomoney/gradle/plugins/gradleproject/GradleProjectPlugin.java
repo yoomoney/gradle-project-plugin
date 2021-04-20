@@ -1,7 +1,7 @@
 package ru.yoomoney.gradle.plugins.gradleproject;
 
 import com.gradle.publish.PublishPlugin;
-import io.codearte.gradle.nexus.NexusStagingPlugin;
+import io.github.gradlenexus.publishplugin.NexusPublishPlugin;
 import io.spring.gradle.dependencymanagement.DependencyManagementPlugin;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
@@ -29,7 +29,7 @@ public class GradleProjectPlugin implements Plugin<Project> {
             JavaArtifactPublishPlugin.class,
             ReleasePlugin.class,
             PublishPlugin.class,
-            NexusStagingPlugin.class
+            NexusPublishPlugin.class
     );
 
     @Override
