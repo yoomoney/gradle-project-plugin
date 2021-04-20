@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [7.3.1](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/5) (20-04-2021)
+
 * Исправлена конфигурация nexus-staging-plugin - теперь проставляется PackageGroup.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [7.3.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/4) (20-04-2021)
 
 * Плагин по работе со staging репозиториями gradle-nexus-staging-plugin заменен на io.github.gradle-nexus:publish-plugin.
