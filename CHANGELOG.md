@@ -1,9 +1,9 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [7.3.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/4) (20-04-2021)
+
 * Плагин по работе со staging репозиториями gradle-nexus-staging-plugin заменен на io.github.gradle-nexus:publish-plugin.
-Старый плагин работал нестабильно из-за того, что не обрабатывал случаи с несколькими staging репозиториями. Новый плагин лишен 
-  этого недостатка.
-### NEXT_VERSION_DESCRIPTION_END
+Старый плагин работал нестабильно из-за того, что не обрабатывал случаи с несколькими staging репозиториями. Новый плагин лишен
+этого недостатка.
+
 ## [7.2.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/3) (08-04-2021)
 
 * Добавлена зависимости на таску checkChangelog для feature веток. Необходимо для проверки заполненности changelog при разработке.
