@@ -63,6 +63,11 @@ public class ExtensionConfigurator {
             nexusRepository.getUsername().set(System.getenv("NEXUS_USER"));
             nexusRepository.getPassword().set(System.getenv("NEXUS_PASSWORD"));
         });
+
+        //отключаем таску публикации, предоставляемую java-artifact-publish-plugin, т.к. io.github.gradle-nexus:publish-plugin
+        //предоставляет свою
+        project.afterEvaluate(p ->
+                project.getTasks().getByName("publishMainArtifactPublicationToMavenRepository").setEnabled(false));
     }
 
     private static void configurePublishPlugin(Project project) {
