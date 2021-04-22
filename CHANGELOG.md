@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
-* Выключение таски publishMainArtifactPublicationToMavenRepository, т.к. публикация осуществляется с помощью таски 
-  gradle-nexus-staging-plugin.
-### NEXT_VERSION_DESCRIPTION_END
+## [7.3.2](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/6) (22-04-2021)
+
+* Выключение таски publishMainArtifactPublicationToMavenRepository, т.к. публикация осуществляется с помощью таски
+gradle-nexus-staging-plugin.
+
 ## [7.3.1](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/5) (20-04-2021)
 
 * Исправлена конфигурация nexus-staging-plugin - теперь проставляется PackageGroup.
