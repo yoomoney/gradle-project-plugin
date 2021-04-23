@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [7.3.3](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/7) (23-04-2021)
+
 * Добавлена таска checkCoverage для поддержки общего скрипта сборки
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [7.3.2](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/6) (22-04-2021)
 
 * Выключение таски publishMainArtifactPublicationToMavenRepository, т.к. публикация осуществляется с помощью таски
