@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Добавлена таска checkCoverage для поддержки общего скрипта сборки
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.3.2](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/6) (22-04-2021)
 

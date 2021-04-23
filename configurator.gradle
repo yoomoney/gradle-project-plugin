@@ -119,6 +119,12 @@ jacocoTestReport {
 }
 check.dependsOn jacocoTestReport
 
+// создаем таску checkCoverage. В этом плагине она ничего не проверяет, но нужна для поддержки общего скрипта сборки
+// для yoomoney-gradle-plugins. см. yoomoney-gradle-plugins/travis-shared-configuration:build-and-publish-plugin.yml
+task checkCoverage {
+    dependsOn jacocoTestReport
+}
+
 group = 'ru.yoomoney.gradle.plugins'
 
 gradlePlugin {
