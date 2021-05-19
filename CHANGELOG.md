@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Добавлена информация о сборке, покрытии, лицензии в README.md.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.3.3](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/7) (23-04-2021)
 

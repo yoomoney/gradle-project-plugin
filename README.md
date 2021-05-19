@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/yoomoney-gradle-plugins/gradle-project-plugin.svg?branch=master)](https://travis-ci.com/yoomoney-gradle-plugins/artifact-release-plugin)
+[![codecov](https://codecov.io/gh/yoomoney-gradle-plugins/gradle-project-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/yoomoney-gradle-plugins/artifact-release-plugin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # gradle-project-plugin
 
 Плагин создан для упрощения сборки существующих gradle плагинов и разработки новых.
