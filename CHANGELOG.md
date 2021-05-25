@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* sdf   
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.3.4](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/8) (19-05-2021)
 
