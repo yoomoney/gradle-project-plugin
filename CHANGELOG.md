@@ -1,6 +1,6 @@
 ### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
-* test pr 
+* test pr  
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.3.4](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/8) (19-05-2021)
 
