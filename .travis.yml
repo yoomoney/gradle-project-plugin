@@ -35,10 +35,7 @@ before_script:
     fi
   - |
     # для не-master веток и сборок от pull-request (fork в том числе) используем git clone без знания секретных переменных
-    echo "$TRAVIS_BRANCH"
-    echo "$TRAVIS_PULL_REQUEST"
-
-    if [ $TRAVIS_BRANCH != "master" ] || [ $TRAVIS_PULL_REQUEST == "true" ]; then
+    if [ $TRAVIS_BRANCH != "master" ] || [ $TRAVIS_PULL_REQUEST != "false" ]; then
         git clone --depth=50 --branch=$TRAVIS_BRANCH https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
         cd $TRAVIS_REPO_SLUG
         git checkout -f $TRAVIS_BRANCH
