@@ -25,7 +25,7 @@ class GradleProjectPluginSpec extends AbstractPluginSpec {
 
         then:
         expectedTasks.forEach({
-            assert result.standardOutput.contains(it)
+            assert !result.standardOutput.contains(it)
         })
     }
 
