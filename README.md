@@ -43,7 +43,4 @@ gradlePlugin {
 *  [ru.yoomoney.gradle.plugins:artifact-release-plugin](https://github.com/yoomoney-gradle-plugins/artifact-release-plugin);  
 *  [ru.yoomoney.gradle.plugins:java-plugin](https://github.com/yoomoney-gradle-plugins/java-plugin);  
 *  [io.spring.dependency-management](https://docs.spring.io/dependency-management-plugin/docs/current/reference/html/);
-*  [com.gradle.publish:plugin-publish-plugin](https://docs.gradle.org/current/userguide/publishing_gradle_plugins.html);
-*  [io.github.gradle-nexus:publish-plugin](https://github.com/gradle-nexus/publish-plugin) - предоставляет задачу closeAndReleaseSonatypeStagingRepository:
-   закрыть staging репозиторий и выпустить артефакт в релизный репозиторий (MavenCentral).  
-   Подробности об этом процессе: https://central.sonatype.org/pages/releasing-the-deployment.html.
+*  [com.gradle.publish:plugin-publish-plugin](https://docs.gradle.org/current/userguide/publishing_gradle_plugins.html).

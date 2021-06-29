@@ -1,7 +1,6 @@
 package ru.yoomoney.gradle.plugins.gradleproject;
 
 import com.gradle.publish.PluginBundleExtension;
-import io.github.gradlenexus.publishplugin.NexusPublishExtension;
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
 import org.gradle.api.tasks.wrapper.Wrapper;
@@ -11,6 +10,7 @@ import ru.yoomoney.gradle.plugins.backend.build.git.GitManager;
 import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishExtension;
 import ru.yoomoney.gradle.plugins.javapublishing.JavaArtifactPublishPlugin;
 import ru.yoomoney.gradle.plugins.javapublishing.PublicationAdditionalInfo;
+import ru.yoomoney.gradle.plugins.javapublishing.StagingPublicationSettings;
 import ru.yoomoney.gradle.plugins.release.ReleaseExtension;
 
 import java.util.ArrayList;
@@ -45,29 +45,7 @@ public class ExtensionConfigurator {
         configureWrapper(project);
         configureJavaPlugin(project);
         configurePublishPlugin(project);
-        configureNexusStaging(project);
         CheckDependenciesConfigurer.configureCheckDependencies(project);
-    }
-
-    /**
-     * Конфигурируем io.github.gradle-nexus:publish-plugin. Плагин нужен нам для работы со staging репозиториями sonatype.
-     * Плагин инициализирует репозиторий, а затем закрывает и релизит его автоматически с помощью таски
-     * closeAndReleaseSonatypeStagingRepository
-     */
-    private static void configureNexusStaging(Project project) {
-        NexusPublishExtension nexusPublishingExtension = project.getExtensions().getByType(NexusPublishExtension.class);
-
-        nexusPublishingExtension.getPackageGroup().set(PLUGIN_GROUP);
-
-        nexusPublishingExtension.getRepositories().sonatype(nexusRepository -> {
-            nexusRepository.getUsername().set(System.getenv("NEXUS_USER"));
-            nexusRepository.getPassword().set(System.getenv("NEXUS_PASSWORD"));
-        });
-
-        //отключаем таску публикации, предоставляемую java-artifact-publish-plugin, т.к. io.github.gradle-nexus:publish-plugin
-        //предоставляет свою
-        project.afterEvaluate(p ->
-                project.getTasks().getByName("publishMainArtifactPublicationToMavenRepository").setEnabled(false));
     }
 
     private static void configurePublishPlugin(Project project) {
@@ -105,9 +83,13 @@ public class ExtensionConfigurator {
 
             String artifactId = getArtifactId(project);
 
+            StagingPublicationSettings stagingPublicationSettings = new StagingPublicationSettings();
+            stagingPublicationSettings.setEnabled(true);
+            stagingPublicationSettings.setNexusUrl("https://oss.sonatype.org/service/local/");
+            publishExtension.setStaging(stagingPublicationSettings);
+
             PublicationAdditionalInfo publicationAdditionalInfo = new PublicationAdditionalInfo();
             publicationAdditionalInfo.setAddInfo(true);
-            String organizationUrl = "https://github.com/yoomoney-gradle-plugins";
             publicationAdditionalInfo.setDescription(getDescription(artifactId));
             publicationAdditionalInfo.setOrganizationUrl("https://github.com/yoomoney-gradle-plugins");
 
@@ -131,7 +113,6 @@ public class ExtensionConfigurator {
             publishExtension.setArtifactId(artifactId);
 
             publishExtension.setSnapshotRepository("https://oss.sonatype.org/content/repositories/snapshots/");
-            publishExtension.setReleaseRepository("https://oss.sonatype.org/service/local/staging/deploy/maven2/");
         });
     }
 
@@ -142,8 +123,8 @@ public class ExtensionConfigurator {
         //задачи, которые будут запускаться при релизе.
         //publish - опубликавать артефакт
         //publishPlugins - опубликовать плагин в Gradle Plugin Portal
-        //closeAndReleaseSonatypeStagingRepository - закрыть staging репозиторий и выпустить артефакт в релизный репозиторий (MavenCentral)
-        releaseExtension.getReleaseTasks().addAll(Arrays.asList("build", "publish", "closeAndReleaseSonatypeStagingRepository",
+        //closeAndReleaseMavenStagingRepository - закрыть staging репозиторий и выпустить артефакт в релизный репозиторий (MavenCentral)
+        releaseExtension.getReleaseTasks().addAll(Arrays.asList("build", "publish", "closeAndReleaseMavenStagingRepository",
                 "publishPlugins"));
         releaseExtension.setPathToGitPrivateSshKey(System.getenv("GIT_PRIVATE_SSH_KEY_PATH"));
         releaseExtension.setPassphraseToGitPrivateSshKey(System.getenv("GIT_KEY_PASSPHRASE"));

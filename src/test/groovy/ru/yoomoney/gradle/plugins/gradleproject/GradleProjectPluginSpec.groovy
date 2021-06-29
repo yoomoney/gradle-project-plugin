@@ -29,4 +29,28 @@ class GradleProjectPluginSpec extends AbstractPluginSpec {
         })
     }
 
+    def "release task should depend on predefined release tasks"() {
+        given:
+        buildFile << """
+            def printTaskDependencies(task, level) {
+                task.taskDependencies.getDependencies(task).forEach {
+                    println(":\${it.name}".padLeft(level * 4))
+                    printTaskDependencies(it, level + 1)
+                }
+            }
+            
+            task printReleaseTaskDependencies {
+                doLast { printTaskDependencies(project.tasks.getByName("release"), 0) }
+            }
+        """
+
+        when:
+        def result = runTasksSuccessfully("printReleaseTaskDependencies")
+
+        then:
+        assert result.standardOutput.contains("closeAndReleaseMavenStagingRepository")
+        assert result.standardOutput.contains("publishPlugins")
+        assert result.standardOutput.contains("publish")
+        assert result.standardOutput.contains("build")
+    }
 }

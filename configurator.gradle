@@ -6,13 +6,12 @@ repositories {
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'ru.yoomoney.gradle.plugins.java-artifact-publish-plugin'
-apply plugin: 'io.github.gradle-nexus.publish-plugin'
 apply plugin: 'com.gradle.plugin-publish'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'ru.yoomoney.gradle.plugins.artifact-release-plugin'
 
 releaseSettings {
-    releaseTasks = ["build", "publish", "closeAndReleaseSonatypeStagingRepository", "publishPlugins"]
+    releaseTasks = ["build", "publish", "closeAndReleaseMavenStagingRepository", "publishPlugins"]
     pathToGitPrivateSshKey = System.getenv("GIT_PRIVATE_SSH_KEY_PATH")
     passphraseToGitPrivateSshKey = System.getenv("GIT_KEY_PASSPHRASE")
     gitUsername = "yoomoney-robot"
@@ -23,23 +22,17 @@ releaseSettings {
     githubAccessToken = System.getenv("GITHUB_TOKEN")
 }
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            username = System.getenv("NEXUS_USER")
-            password = System.getenv("NEXUS_PASSWORD")
-        }
-    }
-}
-
 javaArtifactPublishSettings {
     nexusUser = System.getenv("NEXUS_USER")
     nexusPassword = System.getenv("NEXUS_PASSWORD")
     artifactId = 'gradle-project-plugin'
     groupId = 'ru.yoomoney.gradle.plugins'
     snapshotRepository = "https://oss.sonatype.org/content/repositories/snapshots/"
-    releaseRepository = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
     signing = true
+    staging {
+        enabled = true
+        nexusUrl = "https://oss.sonatype.org/service/local/"
+    }
     publicationAdditionalInfo {
         addInfo = true
         organizationUrl = "https://github.com/yoomoney-gradle-plugins"
@@ -145,9 +138,4 @@ pluginBundle {
 }
 
 project.getExtensions().getByType(GradlePluginDevelopmentExtension.class).setAutomatedPublishing(false)
-//отключаем таску публикации, предоставляемую java-artifact-publish-plugin, т.к. io.github.gradle-nexus:publish-plugin
-//предоставляет свою
-afterEvaluate {
-    project.getTasks().getByName("publishMainArtifactPublicationToMavenRepository").setEnabled(false);
-}
 
