@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [7.4.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/11) (29-06-2021)
+
 * Конфигурация публикации артефакта в staging репозиторий перенесена в `java-artifact-publish-plugin`;
 * Обновлена версия `java-artifact-publish-plugin` 3.0.2 -> 3.2.0.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [7.3.4](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/8) (19-05-2021)
 
 * Добавлена информация о сборке, покрытии, лицензии в README.md.
