@@ -1,43 +1,44 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Переезд организации yoomoney-gradle-plugins -> yoomoney
 ### NEXT_VERSION_DESCRIPTION_END
-## [7.4.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/11) (29-06-2021)
+## [7.4.0](https://github.com/yoomoney/gradle-project-plugin/pull/11) (29-06-2021)
 
 * Конфигурация публикации артефакта в staging репозиторий перенесена в `java-artifact-publish-plugin`;
 * Обновлена версия `java-artifact-publish-plugin` 3.0.2 -> 3.2.0.
 
-## [7.3.4](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/8) (19-05-2021)
+## [7.3.4](https://github.com/yoomoney/gradle-project-plugin/pull/8) (19-05-2021)
 
 * Добавлена информация о сборке, покрытии, лицензии в README.md.
 
-## [7.3.3](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/7) (23-04-2021)
+## [7.3.3](https://github.com/yoomoney/gradle-project-plugin/pull/7) (23-04-2021)
 
 * Добавлена таска checkCoverage для поддержки общего скрипта сборки
 
-## [7.3.2](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/6) (22-04-2021)
+## [7.3.2](https://github.com/yoomoney/gradle-project-plugin/pull/6) (22-04-2021)
 
 * Выключение таски publishMainArtifactPublicationToMavenRepository, т.к. публикация осуществляется с помощью таски
 gradle-nexus-staging-plugin.
 
-## [7.3.1](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/5) (20-04-2021)
+## [7.3.1](https://github.com/yoomoney/gradle-project-plugin/pull/5) (20-04-2021)
 
 * Исправлена конфигурация nexus-staging-plugin - теперь проставляется PackageGroup.
 
-## [7.3.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/4) (20-04-2021)
+## [7.3.0](https://github.com/yoomoney/gradle-project-plugin/pull/4) (20-04-2021)
 
 * Плагин по работе со staging репозиториями gradle-nexus-staging-plugin заменен на io.github.gradle-nexus:publish-plugin.
 Старый плагин работал нестабильно из-за того, что не обрабатывал случаи с несколькими staging репозиториями. Новый плагин лишен
 этого недостатка.
 
-## [7.2.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/3) (08-04-2021)
+## [7.2.0](https://github.com/yoomoney/gradle-project-plugin/pull/3) (08-04-2021)
 
 * Добавлена зависимости на таску checkChangelog для feature веток. Необходимо для проверки заполненности changelog при разработке.
 
-## [7.1.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/2) (30-03-2021)
+## [7.1.0](https://github.com/yoomoney/gradle-project-plugin/pull/2) (30-03-2021)
 
 * Обновлена версия artifact-release-plugin с 3.7.0 на 3.11.1
 
-## [7.0.0](https://github.com/yoomoney-gradle-plugins/gradle-project-plugin/pull/1) (18-03-2021)
+## [7.0.0](https://github.com/yoomoney/gradle-project-plugin/pull/1) (18-03-2021)
 
 * Внесены изменения в связи с переходом на GitHub:
 * Переименованы пакеты

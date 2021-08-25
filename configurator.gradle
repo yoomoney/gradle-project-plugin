@@ -35,7 +35,7 @@ javaArtifactPublishSettings {
     }
     publicationAdditionalInfo {
         addInfo = true
-        organizationUrl = "https://github.com/yoomoney-gradle-plugins"
+        organizationUrl = "https://github.com/yoomoney"
         license {
             name = "MIT License"
             url = "http://www.opensource.org/licenses/mit-license.php"
@@ -113,7 +113,7 @@ jacocoTestReport {
 check.dependsOn jacocoTestReport
 
 // создаем таску checkCoverage. В этом плагине она ничего не проверяет, но нужна для поддержки общего скрипта сборки
-// для yoomoney-gradle-plugins. см. yoomoney-gradle-plugins/travis-shared-configuration:build-and-publish-plugin.yml
+// для yoomoney. см. yoomoney/travis-shared-configuration:build-and-publish-plugin.yml
 task checkCoverage {
     dependsOn jacocoTestReport
 }
@@ -131,8 +131,8 @@ gradlePlugin {
 }
 
 pluginBundle {
-    website = 'https://github.com/yoomoney-gradle-plugins/gradle-project-plugin'
-    vcsUrl = 'https://github.com/yoomoney-gradle-plugins/gradle-project-plugin.git'
+    website = 'https://github.com/yoomoney/gradle-project-plugin'
+    vcsUrl = 'https://github.com/yoomoney/gradle-project-plugin.git'
     description = 'Gradle project plugin'
     tags = ['gradle', 'plugin', 'yoomoney']
 }
