@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/yoomoney-gradle-plugins/gradle-project-plugin.svg?branch=master)](https://travis-ci.com/yoomoney-gradle-plugins/gradle-project-plugin)
-[![codecov](https://codecov.io/gh/yoomoney-gradle-plugins/gradle-project-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/yoomoney-gradle-plugins/gradle-project-plugin)
+[![Build Status](https://travis-ci.com/yoomoney/gradle-project-plugin.svg?branch=master)](https://travis-ci.com/yoomoney/gradle-project-plugin)
+[![codecov](https://codecov.io/gh/yoomoney/gradle-project-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/yoomoney/gradle-project-plugin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # gradle-project-plugin
@@ -38,9 +38,9 @@ gradlePlugin {
 ```
 
 ## Список подключаемых и конфигурируемых плагинов
-*  [ru.yoomoney.gradle.plugins:check-dependencies-plugin](https://github.com/yoomoney-gradle-plugins/check-dependencies-plugin);  
-*  [ru.yoomoney.gradle.plugins:java-artifact-publish-plugin](https://github.com/yoomoney-gradle-plugins/java-artifact-publish-plugin);  
-*  [ru.yoomoney.gradle.plugins:artifact-release-plugin](https://github.com/yoomoney-gradle-plugins/artifact-release-plugin);  
-*  [ru.yoomoney.gradle.plugins:java-plugin](https://github.com/yoomoney-gradle-plugins/java-plugin);  
+*  [ru.yoomoney.gradle.plugins:check-dependencies-plugin](https://github.com/yoomoney/check-dependencies-plugin);  
+*  [ru.yoomoney.gradle.plugins:java-artifact-publish-plugin](https://github.com/yoomoney/java-artifact-publish-plugin);  
+*  [ru.yoomoney.gradle.plugins:artifact-release-plugin](https://github.com/yoomoney/artifact-release-plugin);  
+*  [ru.yoomoney.gradle.plugins:java-plugin](https://github.com/yoomoney/java-plugin);  
 *  [io.spring.dependency-management](https://docs.spring.io/dependency-management-plugin/docs/current/reference/html/);
 *  [com.gradle.publish:plugin-publish-plugin](https://docs.gradle.org/current/userguide/publishing_gradle_plugins.html).

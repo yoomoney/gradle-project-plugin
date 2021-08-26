@@ -53,8 +53,8 @@ public class ExtensionConfigurator {
             PluginBundleExtension bundleExtension = project.getExtensions().getByType(PluginBundleExtension.class);
             String artifactId = getArtifactId(project);
 
-            bundleExtension.setWebsite(format("https://github.com/yoomoney-gradle-plugins/%s", artifactId));
-            bundleExtension.setVcsUrl(format("https://github.com/yoomoney-gradle-plugins/%s.git", artifactId));
+            bundleExtension.setWebsite(format("https://github.com/yoomoney/%s", artifactId));
+            bundleExtension.setVcsUrl(format("https://github.com/yoomoney/%s.git", artifactId));
             bundleExtension.setTags(Arrays.asList("plugin", "gradle", "yoomoney"));
             bundleExtension.setDescription(getDescription(artifactId));
         });
@@ -91,7 +91,7 @@ public class ExtensionConfigurator {
             PublicationAdditionalInfo publicationAdditionalInfo = new PublicationAdditionalInfo();
             publicationAdditionalInfo.setAddInfo(true);
             publicationAdditionalInfo.setDescription(getDescription(artifactId));
-            publicationAdditionalInfo.setOrganizationUrl("https://github.com/yoomoney-gradle-plugins");
+            publicationAdditionalInfo.setOrganizationUrl("https://github.com/yoomoney");
 
             PublicationAdditionalInfo.License license = new PublicationAdditionalInfo.License();
             license.setName("MIT License");
@@ -170,6 +170,6 @@ public class ExtensionConfigurator {
 
     private static String getDescription(String artifactId) {
         return format("Gradle plugin by YooMoney. See README: " +
-                "https://github.com/yoomoney-gradle-plugins/%s", artifactId);
+                "https://github.com/yoomoney/%s", artifactId);
     }
 }
