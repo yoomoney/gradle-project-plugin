@@ -118,6 +118,12 @@ task checkCoverage {
     dependsOn jacocoTestReport
 }
 
+// создаем таску checkSnapshotsDependencies. В этом плагине она ничего не проверяет, но нужна для поддержки общего скрипта сборки
+// для yoomoney. см. yoomoney/travis-shared-configuration:build-and-publish-plugin.yml
+task checkSnapshotsDependencies {
+    dependsOn jacocoTestReport
+}
+
 group = 'ru.yoomoney.gradle.plugins'
 
 gradlePlugin {
