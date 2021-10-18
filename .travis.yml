@@ -33,6 +33,7 @@ before_script:
         cd $TRAVIS_REPO_SLUG
         git checkout -f $TRAVIS_BRANCH
         export GIT_PRIVATE_SSH_KEY_PATH=~/.ssh/git_key
+        ssh -T git@github.com
     fi
 
 if: commit_message !~ /(\[Gradle Release Plugin\])/
