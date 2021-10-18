@@ -2,9 +2,10 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 
         dependencies {
-            classpath 'ru.yoomoney.gradle.plugins:artifact-release-plugin:3.11.1'
+            classpath 'ru.yoomoney.gradle.plugins:artifact-release-plugin:5.1.2-feature-testGit-SNAPSHOT'
             classpath 'ru.yoomoney.gradle.plugins:java-artifact-publish-plugin:3.2.0'
             classpath 'com.gradle.publish:plugin-publish-plugin:0.16.0'
             classpath 'io.github.gradle-nexus:publish-plugin:1.0.0'
