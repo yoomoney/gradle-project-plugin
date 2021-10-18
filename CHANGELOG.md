@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [7.6.0](https://github.com/yoomoney/gradle-project-plugin/pull/14) (18-10-2021)
 
 * Обновлена версия com.gradle.publish:plugin-publish-plugin: 0.13.0 -> 0.16.0
