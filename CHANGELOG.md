@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [7.6.0](https://github.com/yoomoney/gradle-project-plugin/pull/14) (18-10-2021)
+
 * Обновлена версия com.gradle.publish:plugin-publish-plugin: 0.13.0 -> 0.16.0
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [7.5.0](https://github.com/yoomoney/gradle-project-plugin/pull/12) (26-08-2021)
 
 * Переезд организации yoomoney-gradle-plugins -> yoomoney
