@@ -35,8 +35,6 @@ before_script:
         export GIT_PRIVATE_SSH_KEY_PATH=~/.ssh/git_key
     fi
 
-if: commit_message !~ /(\[Gradle Release Plugin\])/
-
 jobs:
   include:
     - stage: release
