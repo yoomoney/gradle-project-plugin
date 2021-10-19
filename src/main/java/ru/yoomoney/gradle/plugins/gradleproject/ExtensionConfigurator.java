@@ -55,7 +55,7 @@ public class ExtensionConfigurator {
             String artifactId = getArtifactId(project);
 
             MavenCoordinates mavenCoordinates = new MavenCoordinates();
-            mavenCoordinates.setGroupId("ru.yoomoney.gradle.plugins");
+            mavenCoordinates.setGroupId(PLUGIN_GROUP);
 
             bundleExtension.setWebsite(format("https://github.com/yoomoney/%s", artifactId));
             bundleExtension.setVcsUrl(format("https://github.com/yoomoney/%s.git", artifactId));
