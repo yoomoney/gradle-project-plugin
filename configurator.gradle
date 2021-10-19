@@ -146,6 +146,7 @@ pluginBundle {
 
     mavenCoordinates {
         groupId = "ru.yoomoney.gradle.plugins"
+        artifactId = "gradle-project-plugin"
     }
 }
 
