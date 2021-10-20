@@ -56,6 +56,7 @@ public class ExtensionConfigurator {
 
             MavenCoordinates mavenCoordinates = new MavenCoordinates();
             mavenCoordinates.setGroupId(PLUGIN_GROUP);
+            mavenCoordinates.setArtifactId(artifactId);
 
             bundleExtension.setWebsite(format("https://github.com/yoomoney/%s", artifactId));
             bundleExtension.setVcsUrl(format("https://github.com/yoomoney/%s.git", artifactId));
