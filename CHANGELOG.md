@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [7.7.0](https://github.com/yoomoney/gradle-project-plugin/pull/15) (20-10-2021)
 
 added a mavenCoordinates block to the pluginBundle
