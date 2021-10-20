@@ -141,6 +141,11 @@ pluginBundle {
     vcsUrl = 'https://github.com/yoomoney/gradle-project-plugin.git'
     description = 'Gradle project plugin'
     tags = ['gradle', 'plugin', 'yoomoney']
+
+    mavenCoordinates {
+        groupId = "ru.yoomoney.gradle.plugins"
+        artifactId = "gradle-project-plugin"
+    }
 }
 
 project.getExtensions().getByType(GradlePluginDevelopmentExtension.class).setAutomatedPublishing(false)

@@ -1,5 +1,6 @@
 package ru.yoomoney.gradle.plugins.gradleproject;
 
+import com.gradle.publish.MavenCoordinates;
 import com.gradle.publish.PluginBundleExtension;
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
@@ -53,10 +54,15 @@ public class ExtensionConfigurator {
             PluginBundleExtension bundleExtension = project.getExtensions().getByType(PluginBundleExtension.class);
             String artifactId = getArtifactId(project);
 
+            MavenCoordinates mavenCoordinates = new MavenCoordinates();
+            mavenCoordinates.setGroupId(PLUGIN_GROUP);
+            mavenCoordinates.setArtifactId(artifactId);
+
             bundleExtension.setWebsite(format("https://github.com/yoomoney/%s", artifactId));
             bundleExtension.setVcsUrl(format("https://github.com/yoomoney/%s.git", artifactId));
             bundleExtension.setTags(Arrays.asList("plugin", "gradle", "yoomoney"));
             bundleExtension.setDescription(getDescription(artifactId));
+            bundleExtension.setMavenCoordinates(mavenCoordinates);
         });
     }
 
