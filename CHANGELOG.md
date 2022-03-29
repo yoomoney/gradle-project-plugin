@@ -1,5 +1,7 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MAJOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Поднята версия gradle: 6.4.1 -> 7.4.1.
+* **breaking changes** Для сборки плагина необходимо, чтобы проект поддерживал сборку с 7 версией gradle.
 ### NEXT_VERSION_DESCRIPTION_END
 ## [7.7.0](https://github.com/yoomoney/gradle-project-plugin/pull/15) (20-10-2021)
 

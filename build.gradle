@@ -34,5 +34,5 @@ dependencies {
             'com.gradle.publish:plugin-publish-plugin:0.16.0'
 
     testImplementation gradleTestKit(),
-            'com.netflix.nebula:nebula-test:7.4.0'
+            'com.netflix.nebula:nebula-test:10.2.0'
 }
