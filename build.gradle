@@ -32,7 +32,7 @@ dependencies {
     api localGroovy(),
             'ru.yoomoney.gradle.plugins:java-artifact-publish-plugin:3.2.0',
             'ru.yoomoney.gradle.plugins:artifact-release-plugin:3.11.1',
-            'ru.yoomoney.gradle.plugins:java-plugin:6.0.0',
+            'ru.yoomoney.gradle.plugins:java-plugin:6.0.1',
             'ru.yoomoney.gradle.plugins:check-dependencies-plugin:7.1.2',
             'com.gradle.publish:plugin-publish-plugin:0.16.0'
 
