@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [8.0.0](https://github.com/yoomoney/gradle-project-plugin/pull/16) (04-04-2022)
 
 * Поднята версия gradle: 6.4.1 -> 7.4.1.
