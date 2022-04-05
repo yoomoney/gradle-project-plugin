@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [8.1.0](https://github.com/yoomoney/gradle-project-plugin/pull/18) (05-04-2022)
+
 * Обновлена версия java-plugin 6.0.1 -> 6.1.0
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [8.0.1](https://github.com/yoomoney/gradle-project-plugin/pull/17) (05-04-2022)
 
 * Обновлена версия java-plugin 6.0.0 -> 6.0.1
