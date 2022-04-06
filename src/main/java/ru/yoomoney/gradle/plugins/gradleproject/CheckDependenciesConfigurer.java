@@ -18,7 +18,6 @@ public final class CheckDependenciesConfigurer {
     private CheckDependenciesConfigurer(){}
 
     public static void configureCheckDependencies(Project project) {
-        configureCheckDependenciesExtension(project);
         configureMajorVersionCheckerExtension(project);
     }
 
@@ -29,12 +28,5 @@ public final class CheckDependenciesConfigurer {
         MajorVersionCheckerExtension majorVersionCheckerExtension =
                 project.getExtensions().findByType(MajorVersionCheckerExtension.class);
         majorVersionCheckerExtension.includeGroupIdPrefixes = includeGroupId;
-    }
-
-    private static void configureCheckDependenciesExtension(Project project) {
-        CheckDependenciesPluginExtension checkDependenciesPluginExtension = project.getExtensions()
-                .findByType(CheckDependenciesPluginExtension.class);
-
-        checkDependenciesPluginExtension.exclusionsRulesSources = singletonList("libraries-versions-exclusions.properties");
     }
 }
