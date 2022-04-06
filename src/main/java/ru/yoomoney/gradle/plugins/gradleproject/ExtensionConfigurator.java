@@ -2,7 +2,6 @@ package ru.yoomoney.gradle.plugins.gradleproject;
 
 import com.gradle.publish.MavenCoordinates;
 import com.gradle.publish.PluginBundleExtension;
-import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
 import org.gradle.api.tasks.wrapper.Wrapper;
 import org.gradle.plugin.devel.GradlePluginDevelopmentExtension;
@@ -94,7 +93,7 @@ public class ExtensionConfigurator {
             stagingPublicationSettings.setNexusUrl("https://oss.sonatype.org/service/local/");
             publishExtension.setStaging(stagingPublicationSettings);
 
-            PublicationAdditionalInfo publicationAdditionalInfo = new PublicationAdditionalInfo();
+            PublicationAdditionalInfo publicationAdditionalInfo = new PublicationAdditionalInfo(project.getObjects());
             publicationAdditionalInfo.setAddInfo(true);
             publicationAdditionalInfo.setDescription(getDescription(artifactId));
             publicationAdditionalInfo.setOrganizationUrl("https://github.com/yoomoney");
@@ -168,7 +167,7 @@ public class ExtensionConfigurator {
 
     private static String getArtifactId(Project project) {
         String value = (String) project.getExtensions().getExtraProperties().get("artifactId");
-        if (StringUtils.isBlank(value)) {
+        if (value == null || value.isEmpty()) {
             throw new IllegalArgumentException("property artifactId is empty");
         }
         return value;

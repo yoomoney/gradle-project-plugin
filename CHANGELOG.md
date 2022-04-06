@@ -1,5 +1,9 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Обновлена версия `java-artifact-publish-plugin` 3.2.0 -> 4.0.0
+* Обновлена версия `artifact-release-plugin` 3.11.1 -> 6.0.0
+* Обновлена версия `java-plugin` 6.1.0 -> 7.0.0
+* Обновлена версия `check-dependencies-plugin` 7.1.2 -> 9.0.0
 ### NEXT_VERSION_DESCRIPTION_END
 ## [8.1.0](https://github.com/yoomoney/gradle-project-plugin/pull/18) (05-04-2022)
 
